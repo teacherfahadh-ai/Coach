@@ -1,178 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-</section>
-
-
-
-    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teacher Fahadh | ICT Coach</title>
 
 <style>
 
-.hire-me {
-background: #0a66c2;
-color: white;
-text-align: center;
-padding: 60px 20px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-.hire-me h2 {
-font-size: 32px;
-margin-bottom: 20px;
+body{
+background:#f5f7fa;
+color:#333;
 }
 
-.hire-me p {
-font-size: 18px;
-margin-bottom: 30px;
+/* Navigation */
+
+.navbar{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.hire-btn, .whatsapp-btn {
-display: inline-block;
-margin: 10px;
-padding: 12px 25px;
-background: white;
-color: #0a66c2;
-text-decoration: none;
-border-radius: 5px;
-font-weight: bold;
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1000px;
+margin:auto;
+padding:15px;
 }
 
-.whatsapp-btn {
-background: #25D366;
-color: white;
+.logo{
+color:#0a66c2;
 }
 
-
-#testimonials {
-padding: 60px 20px;
-background: #f5f7fa;
-text-align: center;
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
 }
 
-.testimonial-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
+.nav-links a:hover{
+color:#0a66c2;
 }
 
-.testimonial-card {
-background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-max-width: 300px;
+/* Header */
+
+header{
+background:linear-gradient(135deg,#0a66c2,#004182);
+color:white;
+text-align:center;
+padding:40px 20px;
 }
 
-.testimonial-card p {
-font-style: italic;
-margin-bottom: 10px;
+header img{
+width:140px;
+height:140px;
+border-radius:50%;
+border:4px solid white;
+margin-bottom:15px;
 }
 
-.testimonial-card h4 {
-color: #007BFF;
+/* Container */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
-
-
-
-    
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', sans-serif;
+.section{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+transition:0.3s;
 }
 
-body {
-background: #f5f7fa;
-color: #333;
-line-height: 1.6;
+.section:hover{
+transform:translateY(-5px);
 }
 
-header {
-background: linear-gradient(135deg,#0a66c2,#004182);
-color: white;
-padding: 40px 20px;
-text-align: center;
+.section h2{
+color:#0a66c2;
+margin-bottom:15px;
 }
 
-header img {
-width: 140px;
-height: 140px;
-border-radius: 50%;
-object-fit: cover;
-border: 4px solid white;
-margin-bottom: 15px;
+/* Button */
+
+.button{
+display:inline-block;
+background:linear-gradient(135deg,#0a66c2,#004182);
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
 }
 
-header h1 {
-font-size: 32px;
-}
+/* Footer */
 
-header p {
-font-size: 18px;
-opacity: 0.95;
-}
-
-.container {
-max-width: 1000px;
-margin: auto;
-padding: 20px;
-}
-
-.section {
-background: white;
-padding: 25px;
-margin-bottom: 20px;
-border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.section h2 {
-color: #0a66c2;
-margin-bottom: 15px;
-border-bottom: 2px solid #eee;
-padding-bottom: 8px;
-}
-
-ul {
-padding-left: 20px;
-}
-
-.skills span {
-display: inline-block;
-background: #0a66c2;
-color: white;
-padding: 6px 12px;
-border-radius: 20px;
-margin: 5px;
-font-size: 14px;
-}
-
-footer {
-text-align: center;
-padding: 20px;
-color: #777;
-}
-
-.button {
-display: inline-block;
-background: #0a66c2;
-color: white;
-padding: 10px 20px;
-border-radius: 5px;
-text-decoration: none;
-margin-top: 10px;
-}
-
-.button:hover {
-background:#004182;
+footer{
+text-align:center;
+padding:20px;
+color:#777;
 }
 
 </style>
@@ -181,24 +121,25 @@ background:#004182;
 
 <body>
 
+<nav class="navbar">
+<div class="nav-container">
+<h2 class="logo">Teacher Fahadh</h2>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="achievements.html">Achievements</a>
+</div>
+
+</div>
+</nav>
+
 <header>
 
-<img src="profile.jpg" alt="Teacher Fahadh" class="profile-img">
+<img src="profile.jpg">
 
-<!-- Header Section -->
-<header class="header">
-    <div class="container">
-        <h1>Teacher Fahadh</h1>
-        <p class="subtitle">ICT Coach | Pearson Edexcel Specialist | Digital Learning Expert</p>
-        
-        <div class="header-info">
-            <p>📍 Hargeisa, Somaliland</p>
-            <p>📧 teacherfahadh@email.com</p>
-            <p>📞 +252636710907</p>
-            <p>🌐 Portfolio: teacherfahadh.github.io</p>
-        </div>
-    </div>
-</header>
+<h1>Teacher Fahadh</h1>
+<p>ICT Coach | Pearson Edexcel Specialist</p>
 
 </header>
 
@@ -206,199 +147,35 @@ background:#004182;
 
 <div class="section">
 <h2>Professional Summary</h2>
-
-<p>
-Dedicated ICT Coach with strong expertise in Pearson Edexcel ICT curriculum. 
-Experienced in improving student achievement through technology integration, digital learning strategies, 
-and practical ICT instruction. Passionate about preparing students for international ICT examinations and 
-developing 21st century digital skills.
-</p>
-
+<p>Dedicated ICT Coach with strong expertise in Pearson Edexcel ICT curriculum.</p>
 </div>
 
 <div class="section">
-
 <h2>Teaching Experience</h2>
-
-<h3>ICT Teacher / ICT Coach</h3>
-<p>Elm High School — Hargeisa</p>
-
 <ul>
-
 <li>Taught Edexcel ICT curriculum</li>
-<li>Improved ICT student exam results</li>
-<li>Developed ICT lesson plans and schemes</li>
-<li>Prepared students for Edexcel exams</li>
-<li>Integrated digital tools into teaching</li>
-<li>Conducted ICT practical lessons</li>
-
+<li>Improved ICT student results</li>
+<li>Prepared students for exams</li>
 </ul>
-
 </div>
 
 <div class="section">
-
-<h2>Education</h2>
-
-<ul>
-
-<li>Bachelor in Information Technology</li>
-<li>Diploma in ICT Education</li>
-
-</ul>
-
+<h2>Testimonials</h2>
+<p>Read what schools say about my teaching.</p>
+<a class="button" href="testimonials.html">View Testimonials</a>
 </div>
 
 <div class="section">
-
-<h2>Teaching Philosophy</h2>
-
-<p>
-My teaching philosophy focuses on student-centered learning, digital literacy, and 
-practical ICT skills development. I aim to create engaging learning environments 
-where students develop critical thinking, creativity, and problem-solving skills 
-through technology.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>Teaching Skills</h2>
-
-<div class="skills">
-
-<span>Edexcel ICT</span>
-    <span>Video Editing </span>
-<span>Python</span>
-<span>Web Development</span>
-<span>Digital Learning</span>
-<span>ICT Coaching</span>
-<span>Google Classroom</span>
-    <span>Cloud Storage</span> 
-<span>Microsoft Office</span>
-<span>ICT Curriculum Design</span>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<!-- Testimonials Section -->
-<section id="testimonials">
-  <h2>Testimonials</h2>
-  
-  <div class="testimonial-container">
-    
-    <div class="testimonial-card">
-      <p>"Fahadh is an outstanding ICT teacher who makes complex topics easy to understand. Students enjoy his lessons."</p>
-      <h4>- School Administrator</h4>
-    </div>
-
-    <div class="testimonial-card">
-      <p>"Very professional and dedicated educator. His Edexcel ICT teaching skills are excellent."</p>
-      <h4>- Senior Teacher</h4>
-    </div>
-
-    <div class="testimonial-card">
-      <p>"Students improved their ICT skills significantly under his guidance."</p>
-      <h4>- Head of Department</h4>
-    </div>
-
-  </div>
-</section>
-
-
-
-    
 <h2>Achievements</h2>
-
-<ul>
-
-<li>Improved ICT exam performance</li>
-<li>Developed digital learning system</li>
-<li>Introduced ICT practical sessions</li>
-<li>Led ICT training for teachers</li>
-<li>Implemented Edexcel ICT curriculum</li>
-
-</ul>
-
+<p>See my professional achievements.</p>
+<a class="button" href="achievements.html">View Achievements</a>
 </div>
 
-<div class="section">
-
-<h2>ICT Projects</h2>
-
-<ul>
-
-<li>Student Portfolio Website</li>
-<li>School ICT System</li>
-<li>Digital Learning Platform</li>
-<li>Online ICT Resources</li>
-
-</ul>
-
 </div>
-
-<div class="section">
-
-<h2>Certifications</h2>
-
-<ul>
-
-<li>ICT Teaching Certification</li>
-<li>Digital Skills Certification</li>
-<li>Education Technology Training</li>
-
-</ul>
-
-</div>
-
-<div class="section">
-
-<h2>Contact Information</h2>
-
-<p>Email: teacherfahadh@gmail.com</p>
-
-<p>Phone: 0636710907</p>
-
-<p>Location: Hargeisa, Somaliland</p>
-
-<a class="button" href="cv.pdf">Download CV</a>
-
-</div>
-
-<div class="section">
-
-<h2>References</h2>
-
-<p><strong>Mr. Awale Adam</strong></p>
-
-<p>Administrator, Elm High School</p>
-
-<p>Phone: +252634763674</p>
-
-<p>Email: adan76ers@yahoo.com</p>
-
-</div>
-<section class="hire-me">
-<h2>Hire Me</h2>
-<p>I am available for ICT Teaching, Digital Skills Training, and Educational Technology Integration in International Schools.</p>
-
-<a href="mailto:teacherfahadh@gmail.com" class="hire-btn">Hire Me</a>
-
-<a href="https://wa.me/+252636710907" class="whatsapp-btn">WhatsApp Me</a>
-</div>
-
 
 <footer>
-
-<p>© 2026 Teacher Fahadh | ICT Coach/Expert/Wizard</p>
-
+<p>© 2026 Teacher Fahadh</p>
 </footer>
 
 </body>
 </html>
-
-
