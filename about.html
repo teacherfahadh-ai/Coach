@@ -4,86 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Teacher Fahadh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Modern Enhancements */
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
+        :root {
+            --primary-blue: #004a99;
+            --accent-blue: #007bff;
+            --text-dark: #2d3436;
+            --bg-light: #f8f9fa;
         }
-        
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #002d5f 100%);
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        header h1 { font-size: 2.2rem; margin: 10px 0; letter-spacing: -1px; }
+        header p { font-weight: 300; opacity: 0.9; font-size: 1.1rem; }
+
+        nav {
+            background: #003366;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #00d4ff; }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
         .section {
-            margin-bottom: 40px;
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 3px;
+            width: 50px;
+            background: var(--accent-blue);
+            margin-left: 15px;
+            border-radius: 2px;
+        }
+
+        /* Skills Styling */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills span {
+            background: #f1f3f5;
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skills span:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Credentials Grid */
         .credential-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-top: 20px;
         }
 
         .cert-card {
             background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
             padding: 15px;
+            border-radius: 12px;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: #007bff;
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .cert-card img {
             width: 100%;
             height: auto;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 15px;
+            border: 1px solid #f0f0f0;
         }
 
         .cert-card p {
-            font-weight: 600;
-            color: #333;
-            margin: 0;
             font-size: 0.95rem;
+            font-weight: 700;
+            color: #333;
         }
 
-        /* Skills Tag Styling */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills span {
-            background: #e9ecef;
-            color: #495057;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .skills span:hover {
-            background: #007bff;
+        footer {
+            background: #002d5f;
             color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
         }
 
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .section { padding: 25px; }
         }
     </style>
 </head>
@@ -108,18 +188,18 @@
     <div class="section">
         <h2>My Philosophy</h2>
         <p>
-            As a <strong>Strategic Systems Advisor</strong> and ICT educator, I believe technology is not just a subject to be taught, but a powerful tool that transforms learning, creativity, and problem-solving. My approach centers on preparing students and organizations for a digital-first future by developing technical proficiency, critical thinking, and confidence.
+            As an <strong>ICT educator,</strong> I believe technology is the ultimate bridge between potential and performance. My mission is to prepare organizations and students for a digital-first future by blending technical proficiency with strategic critical thinking. 
         </p>
         <p>
-            I strive to create environments where learners actively engage in hands-on activities and real-world problem solving. As a Pearson Edexcel Specialist, I focus on building strong foundational skills in digital literacy, programming, and data management aligned with international standards.
+            I specialize in creating student-centered learning environments and implementing high-impact digital infrastructures that align with international standards.
         </p>
     </div>
 
     <div class="section">
         <h2>Expertise & Skills</h2>
         <div class="skills">
-            <span>Edexcel ICT Mastery</span>
             <span>Strategic Systems Advisory</span>
+            <span>Edexcel ICT Mastery</span>
             <span>Coding & Programming</span>
             <span>Web Development</span>
             <span>Google Classroom & LMS</span>
@@ -129,7 +209,7 @@
             <span>Cyber Security</span>
             <span>Cloud Management</span>
             <span>Digital Marketing & SEO</span>
-            <span>Multimedia Presentations</span>
+            <span>E-commerce Integration</span>
         </div>
     </div>
 
@@ -138,17 +218,17 @@
         <div class="credential-grid">
             
             <div class="cert-card">
-                <img src="cert1.jpg" alt="University Degree">
+                <img src="cert1.jpg" alt="Bachelor of Business IT">
                 <p>Bachelor of Business IT (JKUAT)</p>
             </div>
 
             <div class="cert-card">
-                <img src="cert2.jpg" alt="Technical Certification">
+                <img src="cert2.jpg" alt="E-commerce Certification">
                 <p>E-commerce & Web Design</p>
             </div>
 
             <div class="cert-card">
-                <img src="cert3.jpg" alt="Professional Marketing Certification">
+                <img src="cert3.jpg" alt="Digital Marketing Certification">
                 <p>Digital Marketing & SEO Strategy</p>
             </div>
 
@@ -158,7 +238,7 @@
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh. Built with passion for technology and education.</p>
+    <p>© 2026 Teacher Fahadh. Dedicated to Excellence in Technology & Education.</p>
 </footer>
 
 </body>
