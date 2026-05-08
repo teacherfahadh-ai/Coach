@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects & Experience | Teacher Fahadh</title>
+    <title>About | Teacher Fahadh</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary-blue: #004a99;
@@ -30,13 +29,16 @@
         }
 
         header img {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             object-fit: cover;
             margin-bottom: 15px;
         }
+
+        header h1 { font-size: 2.2rem; margin: 10px 0; }
 
         nav {
             background: #003366;
@@ -70,29 +72,64 @@
 
         h2 {
             color: var(--primary-blue);
+            font-size: 1.5rem;
             margin-bottom: 20px;
             border-left: 5px solid var(--accent-blue);
             padding-left: 15px;
         }
 
-        /* Project List Styling */
-        .project-list {
+        /* Skills Styling */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills span {
+            background: #f1f3f5;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Project & Cert Lists */
+        .grid-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 10px;
             list-style: none;
             padding: 0;
         }
 
-        .project-list li {
+        .grid-list li {
             background: #f8f9fa;
-            padding: 12px 15px;
+            padding: 10px 15px;
             border-radius: 8px;
             border-left: 3px solid #dee2e6;
-            font-size: 0.95rem;
         }
 
-        /* Testimonials Grid */
+        /* Credentials Grid */
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .cert-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -100,32 +137,26 @@
         }
 
         .testimonial-card {
-            background: #fff;
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
             border: 1px solid #eee;
             font-style: italic;
-            position: relative;
-        }
-
-        .testimonial-card p {
-            margin-bottom: 15px;
-            color: #444;
+            background: #fff;
         }
 
         .testimonial-card span {
             display: block;
-            font-weight: 700;
+            margin-top: 10px;
+            font-weight: bold;
             font-style: normal;
             color: var(--primary-blue);
-            font-size: 0.85rem;
         }
 
         footer {
             background: #002d5f;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             margin-top: 50px;
         }
     </style>
@@ -149,26 +180,32 @@
 <div class="container">
 
     <div class="section">
+        <h2>My Teaching Philosophy</h2>
+        <p>As an ICT educator, I believe technology is a powerful tool that transforms learning, creativity, and problem-solving. My philosophy centers on preparing students for a digital future by developing their technical skills, critical thinking, and confidence.</p>
+    </div>
+
+    <div class="section">
+        <h2>Teaching Skills</h2>
+        <div class="skills">
+            <span>Edexcel ICT</span><span>Coding & Programming</span><span>Web Development</span>
+            <span>Google Classroom</span><span>Spreadsheet & Database</span><span>Graphic Design</span>
+            <span>Video Editing</span><span>Cyber Security</span><span>Cloud Management</span>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>ICT Projects</h2>
-        <ul class="project-list">
-            <li>Student Portfolio Website</li>
-            <li>School ICT System</li>
-            <li>Digital Learning Platform</li>
-            <li>Online ICT Resources</li>
-            <li>Data Handling & Spreadsheet Project</li>
-            <li>Digital Presentation Project</li>
-            <li>ICT Research & Innovation Project</li>
-            <li>Coding for Beginners Project</li>
-            <li>Digital Literacy & Productivity Project</li>
-            <li>Website Development Project</li>
-            <li>ICT Digital Club Project</li>
-            <li>Operating Online Project</li>
+        <ul class="grid-list">
+            <li>Student Portfolio Website</li><li>School ICT System</li><li>Digital Learning Platform</li>
+            <li>Online ICT Resources</li><li>Data Handling & Spreadsheet</li><li>Digital Presentation Project</li>
+            <li>ICT Research & Innovation</li><li>Coding for Beginners</li><li>Digital Literacy Project</li>
+            <li>Website Development Project</li><li>ICT Digital Club</li><li>Operating Online Project</li>
         </ul>
     </div>
 
     <div class="section">
         <h2>Certifications</h2>
-        <ul class="project-list">
+        <ul class="grid-list">
             <li>ICT Teaching Certification</li>
             <li>Digital Skills Certification</li>
             <li>Education Technology Training</li>
@@ -176,24 +213,20 @@
     </div>
 
     <div class="section">
+        <h2>Professional Credentials</h2>
+        <div class="credential-grid">
+            <div class="cert-card"><img src="cert1.jpg" alt="Cert 1"><p>Bachelor of Business IT</p></div>
+            <div class="cert-card"><img src="cert2.jpg" alt="Cert 2"><p>E-commerce & Web Design</p></div>
+            <div class="cert-card"><img src="cert3.jpg" alt="Cert 3"><p>Digital Marketing & SEO</p></div>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Testimonials</h2>
         <div class="testimonial-grid">
-            
-            <div class="testimonial-card">
-                <p>"Fahadh is an outstanding ICT teacher."</p>
-                <span>- School Administrator</span>
-            </div>
-
-            <div class="testimonial-card">
-                <p>"Very professional educator."</p>
-                <span>- Senior Teacher</span>
-            </div>
-
-            <div class="testimonial-card">
-                <p>"Students improved significantly."</p>
-                <span>- Head of Department</span>
-            </div>
-
+            <div class="testimonial-card"><p>"Fahadh is an outstanding ICT teacher."</p><span>- School Administrator</span></div>
+            <div class="testimonial-card"><p>"Very professional educator."</p><span>- Senior Teacher</span></div>
+            <div class="testimonial-card"><p>"Students improved significantly."</p><span>- Head of Department</span></div>
         </div>
     </div>
 
