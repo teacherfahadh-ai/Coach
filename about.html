@@ -7,13 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #003366;
-            --secondary: #0056b3;
-            --accent: #00d4ff;
-            --bg: #f4f7f9;
+            --primary: #002147; /* Academic Deep Navy */
+            --secondary: #d4af37; /* Professional Gold Accent */
+            --accent: #0056b3;
+            --bg: #f5f7fa;
             --white: #ffffff;
-            --text: #2d3436;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --text-main: #1a1a1a;
+            --text-muted: #535c68;
+            --radius: 12px;
+            --shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,197 +23,178 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* --- Header --- */
+        /* --- Elegant Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
-            padding: 60px 20px;
+            background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
+            padding: 80px 20px;
             text-align: center;
             color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
         header img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.15);
-            box-shadow: var(--shadow);
+            border: 4px solid var(--secondary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
             object-fit: cover;
             margin-bottom: 20px;
-            transition: transform 0.4s ease;
         }
 
-        header img:hover { transform: scale(1.05); }
-        header h1 { font-size: 2.5rem; letter-spacing: -0.5px; margin-bottom: 5px; }
-        header p { font-weight: 300; opacity: 0.9; font-size: 1.1rem; }
+        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; }
+        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
 
-        /* --- Navigation --- */
+        /* --- Floating Navigation --- */
         nav {
-            background: rgba(0, 31, 63, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            background: var(--white);
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: var(--white);
+            color: var(--primary);
             text-decoration: none;
-            margin: 0 18px;
-            font-weight: 500;
-            font-size: 0.9rem;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            letter-spacing: 1.2px;
+            transition: all 0.3s;
         }
 
-        nav a:hover { color: var(--accent); }
+        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
 
-        /* --- Layout --- */
+        /* --- Content Container --- */
         .container {
             max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 25px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
         }
 
         .section {
             background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 45px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 40px;
-            border: 1px solid rgba(0,0,0,0.02);
+            margin-bottom: 35px;
+            transition: transform 0.3s;
         }
 
         h2 {
             color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 10px;
+            display: inline-block;
         }
 
-        h2::before {
-            content: "";
-            width: 5px;
-            height: 25px;
-            background: var(--secondary);
-            margin-right: 15px;
-            border-radius: 10px;
-        }
-
-        /* --- Skills --- */
-        .skills {
+        /* --- Skills & Project Tags --- */
+        .skill-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
 
-        .skills span {
-            background: #eef2f7;
+        .skill-tag {
+            background: #f0f3f7;
             padding: 10px 20px;
-            border-radius: 12px;
+            border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--primary);
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        .skills span:hover {
+        .skill-tag:hover {
             background: var(--primary);
             color: var(--white);
-            transform: translateY(-3px);
+            transform: scale(1.05);
         }
 
-        /* --- Lists --- */
-        .grid-list {
+        /* --- Grid Lists --- */
+        .list-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             list-style: none;
         }
 
-        .grid-list li {
-            background: #fdfdfd;
+        .list-grid li {
             padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #edf2f7;
-            font-size: 0.95rem;
+            background: #f9fbff;
+            border-radius: 8px;
+            font-weight: 500;
             display: flex;
             align-items: center;
         }
 
-        .grid-list li::before {
-            content: "✓";
+        .list-grid li::before {
+            content: "•";
             color: var(--secondary);
-            font-weight: bold;
-            margin-right: 12px;
+            font-size: 1.5rem;
+            margin-right: 15px;
         }
 
-        /* --- Credentials --- */
+        /* --- Certificate Gallery --- */
         .credential-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .cert-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 15px;
             border: 1px solid #eee;
-            transition: transform 0.3s ease;
+            padding: 12px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: 0.4s;
         }
 
-        .cert-card:hover { transform: translateY(-5px); }
+        .cert-card:hover { border-color: var(--secondary); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
         .cert-card img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 6px;
             margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .cert-card p { font-weight: 700; color: var(--primary); }
+        .cert-card p { font-weight: 700; font-size: 0.9rem; color: var(--primary); }
 
         /* --- Testimonials --- */
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .testimonial-card {
             padding: 30px;
-            border-radius: 20px;
-            background: linear-gradient(to bottom right, #ffffff, #f9fafb);
-            border: 1px solid #f0f0f0;
-            position: relative;
+            border-radius: var(--radius);
+            background: #f9fbff;
+            border-left: 4px solid var(--secondary);
         }
 
-        .testimonial-card p { font-style: italic; color: #555; }
-        .testimonial-card span {
-            display: block;
-            margin-top: 15px;
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 0.85rem;
-        }
+        .testimonial-card p { font-style: italic; color: var(--text-muted); margin-bottom: 15px; }
+        .testimonial-card span { font-weight: 700; color: var(--primary); font-size: 0.8rem; }
 
         footer {
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
+            padding: 50px 20px;
             font-size: 0.9rem;
-            opacity: 0.95;
         }
 
         @media (max-width: 768px) {
@@ -239,66 +222,84 @@
 <div class="container">
 
     <div class="section">
-        <h2>My Teaching Philosophy</h2>
-        <p>As an ICT educator, I believe technology is a powerful tool that transforms learning, creativity, and problem-solving. My philosophy centers on preparing students for a digital future by developing their technical skills, critical thinking, and confidence to lead in a changing world.</p>
+        <h2>Teaching Philosophy</h2>
+        <p>I believe that technology is the cornerstone of modern education. My approach focuses on bridging the gap between theoretical knowledge and practical application, ensuring students are not just computer literate, but digital innovators. As an <strong>ICT Teacher</strong>, I am dedicated to fostering environments that encourage curiosity, ethical digital citizenship, and technical mastery.</p>
     </div>
 
     <div class="section">
-        <h2>Teaching Skills</h2>
-        <div class="skills">
-            <span>Pearson Edexcel ICT</span><span>Coding & Programming</span>
-            <span>Web Development</span><span>Google Classroom</span>
-            <span>Spreadsheet & Database</span><span>Graphic Design</span>
-            <span>Cyber Security Awareness</span><span>Cloud Management</span>
+        <h2>Expertise & Skills</h2>
+        <div class="skill-grid">
+            <div class="skill-tag">Pearson Edexcel ICT</div>
+            <div class="skill-tag">Coding (Python & Scratch)</div>
+            <div class="skill-tag">Web Development (HTML/CSS/JS)</div>
+            <div class="skill-tag">Google Classroom Mastery</div>
+            <div class="skill-tag">Database Management</div>
+            <div class="skill-tag">Graphic Design (Canva/PS)</div>
+            <div class="skill-tag">Cyber Security Basics</div>
+            <div class="skill-tag">Cloud Infrastructure</div>
         </div>
     </div>
 
     <div class="section">
-        <h2>ICT Projects</h2>
-        <ul class="grid-list">
-            <li>Digital Learning Platform Implementation</li>
-            <li>Online ICT Resource Repository</li>
-            <li>Advanced Data Handling & Spreadsheet Analysis</li>
-            <li>Interactive Digital Presentation Series</li>
-            <li>ICT Research & Innovation Mentorship</li>
-            <li>Coding for Beginners (Python & Scratch)</li>
-            <li>Global Digital Literacy Standards Project</li>
-            <li>Custom Website Development Portfolio</li>
+        <h2>Active ICT Projects</h2>
+        <ul class="list-grid">
+            <li>Digital Learning Platform Setup</li>
+            <li>ICT Resource Repository</li>
+            <li>Advanced Spreadsheet Analysis</li>
+            <li>Student Coding Bootcamps</li>
+            <li>LMS Optimization Projects</li>
+            <li>Digital Presentation Series</li>
             <li>ICT Digital Club Leadership</li>
+            <li>School Web Infrastructure</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>Certifications</h2>
-        <ul class="grid-list">
+        <h2>Professional Certifications</h2>
+        <ul class="list-grid">
             <li>ICT Teaching Certification</li>
-            <li>Advanced Digital Skills Certification</li>
-            <li>Educational Technology Training</li>
+            <li>Advanced Digital Skills Specialist</li>
+            <li>Educational Technology Leadership</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>Professional Credentials</h2>
+        <h2>Academic Credentials</h2>
         <div class="credential-grid">
-            <div class="cert-card"><img src="cert1.jpg" alt="Bachelor Degree"><p>Bachelor of Business IT (JKUAT)</p></div>
-            <div class="cert-card"><img src="cert2.jpg" alt="E-commerce Cert"><p>E-commerce & Web Design</p></div>
-            <div class="cert-card"><img src="cert3.jpg" alt="Digital Marketing Cert"><p>Digital Marketing & SEO</p></div>
+            <div class="cert-card">
+                <img src="cert1.jpg" alt="Degree">
+                <p>Bachelor of Business IT (JKUAT)</p>
+            </div>
+            <div class="cert-card">
+                <img src="cert2.jpg" alt="Web Cert">
+                <p>E-commerce & Web Development</p>
+            </div>
+            <div class="cert-card">
+                <img src="cert3.jpg" alt="Digital Cert">
+                <p>Digital Marketing & SEO Strategy</p>
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>Testimonials</h2>
+        <h2>Impact & Feedback</h2>
         <div class="testimonial-grid">
-            <div class="testimonial-card"><p>"Fahadh is an outstanding ICT teacher who brings real-world relevance into the classroom."</p><span>- School Administrator</span></div>
-            <div class="testimonial-card"><p>"A very professional educator with a deep understanding of the Edexcel curriculum."</p><span>- Senior Teacher</span></div>
-            <div class="testimonial-card"><p>"Student engagement and performance in ICT improved significantly under his guidance."</p><span>- Head of Department</span></div>
+            <div class="testimonial-card">
+                <p>"Fahadh is a dedicated professional who makes complex technical subjects easy for students to grasp."</p>
+                <span>- School Administrator</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"A leader in implementing digital learning standards across the department."</p>
+                <span>- Senior Teacher</span>
+            </div>
         </div>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh • Empowering the next generation through Technology</p>
+    <p>© 2026 Teacher Fahadh</p>
+    <p style="opacity: 0.5; font-size: 0.7rem; margin-top: 10px;">Excellence in ICT Education</p>
 </footer>
 
 </body>
