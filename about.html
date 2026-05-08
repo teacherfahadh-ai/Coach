@@ -1,84 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Teacher Fahadh</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern Enhancements */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* Credentials Grid */
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-<title>About | Teacher Fahadh</title>
+        .cert-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
 
-<link rel="stylesheet" href="style.css">
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #007bff;
+        }
 
+        .cert-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .cert-card p {
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Tag Styling */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills span {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .skills span:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<img src="profile.jpg">
-
-<h1>Teacher Fahadh</h1>
-
-<p>ICT Coach | Pearson Edexcel Specialist</p>
-
+    <img src="profile.jpg" alt="Jamal Fahadh Mohamed">
+    <h1>Teacher Fahadh</h1>
+    <p>Strategic Systems Advisor | ICT Coach | Pearson Edexcel Specialist</p>
 </header>
 
 <nav>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="experience.html">Experience</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
 
-<div class="section">
+    <div class="section">
+        <h2>My Philosophy</h2>
+        <p>
+            As a <strong>Strategic Systems Advisor</strong> and ICT educator, I believe technology is not just a subject to be taught, but a powerful tool that transforms learning, creativity, and problem-solving. My approach centers on preparing students and organizations for a digital-first future by developing technical proficiency, critical thinking, and confidence.
+        </p>
+        <p>
+            I strive to create environments where learners actively engage in hands-on activities and real-world problem solving. As a Pearson Edexcel Specialist, I focus on building strong foundational skills in digital literacy, programming, and data management aligned with international standards.
+        </p>
+    </div>
 
-<h2>My Teaching Philosophy</h2>
+    <div class="section">
+        <h2>Expertise & Skills</h2>
+        <div class="skills">
+            <span>Edexcel ICT Mastery</span>
+            <span>Strategic Systems Advisory</span>
+            <span>Coding & Programming</span>
+            <span>Web Development</span>
+            <span>Google Classroom & LMS</span>
+            <span>Spreadsheet & Database Design</span>
+            <span>Graphic Design</span>
+            <span>Video Editing</span>
+            <span>Cyber Security</span>
+            <span>Cloud Management</span>
+            <span>Digital Marketing & SEO</span>
+            <span>Multimedia Presentations</span>
+        </div>
+    </div>
 
-<p>
-As an ICT educator, I believe that technology is not just a subject to be taught, but a powerful tool that transforms learning, creativity, and problem-solving. My teaching philosophy centers on preparing students for a digital future by developing their technical skills, critical thinking, and confidence in using technology effectively.
+    <div class="section">
+        <h2>Professional Credentials</h2>
+        <div class="credential-grid">
+            
+            <div class="cert-card">
+                <img src="cert1.jpg" alt="University Degree">
+                <p>Bachelor of Business IT (JKUAT)</p>
+            </div>
 
-I strive to create a student-centered learning environment where learners actively engage in hands-on activities, collaborative projects, and real-world problem solving. I believe students learn best when they are encouraged to explore, experiment, and apply their knowledge practically.
+            <div class="cert-card">
+                <img src="cert2.jpg" alt="Technical Certification">
+                <p>E-commerce & Web Design</p>
+            </div>
 
-As an Edexcel ICT teacher, I focus on building strong foundational skills in digital literacy, programming, data management, and multimedia development. I aim to ensure students not only understand concepts but also gain practical experience aligned with international standards.
+            <div class="cert-card">
+                <img src="cert3.jpg" alt="Professional Marketing Certification">
+                <p>Digital Marketing & SEO Strategy</p>
+            </div>
 
-I am committed to fostering creativity, innovation, and responsible digital citizenship. I encourage students to become independent learners who use technology ethically, responsibly, and productively.
-
-My goal is to inspire students to become confident digital creators, critical thinkers, and future leaders in a rapidly evolving technological world.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>Teaching Skills</h2>
-
-<div class="skills">
-
-<span>Edexcel ICT</span>
-<span>Coding and Programming</span>
-<span>Web Development</span>
-<span>Google Classroom</span>
-<span>Spreadsheet and Database</span>
-<span>Ggraphic designing</span>
-<span>Video Editing</span>
-<span>Cyber Security</span>
-<span>Cloud Management</span>
-<span>Multimedia Presentations</span>
-</div>
-
-</div>
+        </div>
+    </div>
 
 </div>
 
 <footer>
-
-<p>© 2026 Teacher Fahadh</p>
-
+    <p>© 2026 Teacher Fahadh. Built with passion for technology and education.</p>
 </footer>
 
 </body>
