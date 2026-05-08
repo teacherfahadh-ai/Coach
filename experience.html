@@ -1,209 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Teacher Fahadh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #002147; /* Academic Deep Navy */
+            --secondary: #d4af37; /* Professional Gold Accent */
+            --accent: #0056b3;
+            --bg: #f5f7fa;
+            --white: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #535c68;
+            --radius: 12px;
+            --shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<title>Experience | Teacher Fahadh</title>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-<link rel="stylesheet" href="style.css">
+        /* --- Elegant Header --- */
+        header {
+            background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
 
+        header img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
+        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
+
+        /* --- Navigation --- */
+        nav {
+            background: var(--white);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
+
+        /* --- Content Container --- */
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: var(--white);
+            padding: 45px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 35px;
+        }
+
+        h2.exp-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .intro-text { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.8; }
+
+        /* --- Experience Cards --- */
+        .job-card {
+            border-left: 4px solid var(--primary);
+            padding-left: 25px;
+            margin-bottom: 40px;
+        }
+
+        .job-card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 5px; }
+        .job-card .company { color: var(--secondary); font-weight: 700; font-size: 1rem; margin-bottom: 15px; display: block; }
+
+        .task-list { list-style: none; }
+        .task-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        .task-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* --- Achievement Grid --- */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .achieve-card {
+            background: #f9fbff;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 3px solid var(--secondary);
+            transition: 0.3s;
+        }
+
+        .achieve-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+        .achieve-card i { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: block; }
+        .achieve-card h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; }
+        .achieve-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover { opacity: 1; color: var(--secondary); }
+
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; opacity: 0.8; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .section { padding: 30px; }
+            .footer-links a { display: block; margin: 10px 0; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<img src="profile.jpg">
-
-<h1>Teacher Fahadh</h1>
-
-<p>ICT Coach | Pearson Edexcel Specialist | Digital Learning Expert</p>
-
+    <img src="profile.jpg" alt="Teacher Fahadh">
+    <h1>Professional Experience</h1>
+    <p>Cultivating Excellence in Digital Education</p>
 </header>
 
 <nav>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="experience.html">Experience</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
+    <div class="section">
+        <h2 class="exp-title">Professional Overview</h2>
+        <p class="intro-text">
+            I am a passionate and dedicated ICT teacher with experience in delivering engaging, student-centered lessons that promote digital literacy, critical thinking, and problem-solving skills. My teaching experience focuses on preparing students for modern technological environments while supporting academic excellence.
+        </p>
 
-<div class="section">
+        <div class="job-card">
+            <h3>ICT Teaching Specialist</h3>
+            <span class="company">@ELM School, Hargeisa</span>
+            <ul class="task-list">
+                <li>Delivering Pearson Edexcel Curriculum for Secondary School Level.</li>
+                <li>Planning and preparing engaging ICT lessons focusing on computer fundamentals.</li>
+                <li>Guiding students through practical ICT projects and examination coursework.</li>
+                <li>Integrating technology into classroom teaching and managing computer labs.</li>
+                <li>Supporting diverse learning abilities and fostering digital literacy.</li>
+            </ul>
+        </div>
+    </div>
 
-
-<section class="experience">
-<div class="container">
-<h2>Professional Experience </h2>
-
-<p>
-I am a passionate and dedicated ICT teacher with experience in delivering engaging, 
-student-centered lessons that promote digital literacy, critical thinking, and 
-problem-solving skills. My teaching experience focuses on preparing students for 
-modern technological environments while supporting academic excellence.
-</p>
-
-<h3>ICT Teaching Experience @ELM School, Hargeisa.</h3>
-
-<ul>
-<li>Teaching ICT and Computer Studies at Secondary School Level</li>
-<li>Delivering Pearson Edexcel Curriculum</li>
-<li>Planning and preparing engaging ICT lessons</li>
-<li>Teaching computer fundamentals and digital literacy</li>
-<li>Guiding students through practical ICT projects</li>
-<li>Preparing students for examinations and coursework</li>
-<li>Supporting students with different learning abilities</li>
-<li>Integrating technology into classroom teaching</li>
-<li>Managing ICT classrooms and computer labs</li>
-</ul>
-
-<h3>Professional Skills & Responsibilities</h3>
-
-<ul>
-<li>Curriculum planning and lesson development</li>
-<li>Student assessment and progress tracking</li>
-<li>Educational technology integration</li>
-<li>Online and blended learning</li>
-<li>Classroom management and student engagement</li>
-<li>Supporting colleagues with ICT integration</li>
-</ul>
-
+    <div class="section">
+        <h2 class="exp-title">Professional Achievements</h2>
+        <div class="achievement-grid">
+            <div class="achieve-card">
+                <i class="fa-solid fa-book-open"></i>
+                <h4>Edexcel ICT Teaching</h4>
+                <p>Successfully delivered Pearson ICT curriculum with student-centered learning strategies.</p>
+            </div>
+            <div class="achieve-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h4>Skills Development</h4>
+                <p>Helped students develop strong skills in productivity tools and internet research.</p>
+            </div>
+            <div class="achieve-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h4>Performance Improvement</h4>
+                <p>Improved academic performance through interactive lessons and practical projects.</p>
+            </div>
+            <div class="achieve-card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <h4>ICT Integration</h4>
+                <p>Integrated technology into classroom teaching to enhance learning outcomes.</p>
+            </div>
+        </div>
+    </div>
 </div>
-</section>
-
-<style>
-.experience {
-padding: 60px 20px;
-background: #f5f7fa;
-}
-
-.experience h2 {
-text-align: center;
-font-size: 32px;
-margin-bottom: 20px;
-color: #0a66c2;
-}
-
-.experience h3 {
-margin-top: 25px;
-color: #333;
-}
-
-.experience p {
-text-align: center;
-max-width: 800px;
-margin: auto;
-margin-bottom: 20px;
-}
-
-.experience ul {
-max-width: 800px;
-margin: auto;
-line-height: 1.8;
-}
-
-.container {
-max-width: 1100px;
-margin: auto;
-}
-</style>
-
-<section class="achievements">
-<div class="container">
-<h2>Professional Achievements @ELM SCHOOL, HARGEISA!</h2>
-
-<div class="achievements-grid">
-
-<div class="achievement-card">
-<h3>📘 Edexcel ICT Teaching</h3>
-<p>Successfully delivered Edexcel Pearson ICT curriculum with student-centered learning strategies.</p>
-</div>
-
-<div class="achievement-card">
-<h3>💻 Digital Skills Development</h3>
-<p>Helped students develop strong computer skills including productivity tools and internet research.</p>
-</div>
-
-<div class="achievement-card">
-<h3>📊 Student Performance Improvement</h3>
-<p>Improved student academic performance through interactive ICT lessons and practical projects.</p>
-</div>
-
-<div class="achievement-card">
-<h3>🖥️ ICT Integration</h3>
-<p>Integrated technology into classroom teaching to enhance student engagement and learning outcomes.</p>
-</div>
-
-<div class="achievement-card">
-<h3>👨‍🏫 Student-Centered Teaching</h3>
-<p>Implemented modern teaching methods to support diverse learning abilities.</p>
-</div>
-
-<div class="achievement-card">
-<h3>🌍 International Teaching Readiness</h3>
-<p>Prepared students with ICT skills relevant for global education and future careers.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<style>
-.achievements {
-padding: 60px 20px;
-background: white;
-}
-
-.achievements h2 {
-text-align: center;
-font-size: 32px;
-margin-bottom: 40px;
-color: #0a66c2;
-}
-
-.achievements-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
-max-width: 1100px;
-margin: auto;
-}
-
-.achievement-card {
-background: #f5f7fa;
-padding: 25px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-transition: 0.3s;
-}
-
-.achievement-card:hover {
-transform: translateY(-5px);
-}
-
-.achievement-card h3 {
-margin-bottom: 10px;
-color: #333;
-}
-
-.achievement-card p {
-color: #555;
-}
-</style>
 
 <footer>
-
-<p>© 2026 Teacher Fahadh | ICT Coach</p>
-
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
+    </div>
 </footer>
 
 </body>
-
 </html>
