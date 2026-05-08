@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Fahadh | Strategic ICT Advisor</title>
+    <title>Teacher Fahadh | ICT Department Lead & Edexcel Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,7 +15,7 @@
             --text-light: #4a5568;
             --white: #ffffff;
             --bg-off-white: #f8fafc;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,171 +24,184 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-off-white);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        /* --- PRESTIGE HEADER --- */
+        /* --- DOMINANT PRESTIGE HEADER --- */
         header {
-            background: linear-gradient(rgba(0, 31, 63, 0.9), rgba(0, 31, 63, 0.9)), 
+            background: linear-gradient(rgba(0, 31, 63, 0.93), rgba(0, 31, 63, 0.93)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png'), var(--secondary-navy);
             color: var(--white);
-            padding: 80px 20px 60px;
+            padding: 120px 20px 90px;
             text-align: center;
-            border-bottom: 5px solid var(--gold-accent);
+            border-bottom: 7px solid var(--gold-accent);
         }
 
         .profile-wrap {
             position: relative;
             display: inline-block;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         header img {
-            width: 160px;
-            height: 160px;
+            width: 220px; /* Dominant Size */
+            height: 220px;
             border-radius: 50%;
-            border: 4px solid var(--gold-accent);
+            border: 6px solid var(--gold-accent);
             object-fit: cover;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.6);
+            transition: transform 0.4s ease;
         }
 
+        header img:hover { transform: scale(1.03); }
+
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
         }
 
         .header-tags {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--gold-accent);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 4px;
         }
 
         /* --- STICKY NAV --- */
         nav {
             background-color: var(--white);
-            padding: 20px 0;
+            padding: 24px 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.07);
         }
 
         nav a {
             color: var(--primary-navy);
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 0.85rem;
+            margin: 0 30px;
+            font-size: 0.95rem;
             font-weight: 800;
             text-transform: uppercase;
             transition: 0.3s;
+            letter-spacing: 1.5px;
         }
 
         nav a:hover { color: var(--gold-accent); }
 
-        /* --- CONTENT CARDS --- */
+        /* --- REFINED CONTENT SECTION --- */
         .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
+            max-width: 950px;
+            margin: 70px auto;
+            padding: 0 25px;
         }
 
         .main-card {
             background: var(--white);
-            padding: 50px;
-            border-radius: 20px;
+            padding: 65px;
+            border-radius: 28px;
             box-shadow: var(--shadow);
-            border: 1px solid #edf2f7;
-            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.04);
+            margin-bottom: 60px;
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 2rem;
             color: var(--primary-navy);
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             font-weight: 800;
-            position: relative;
-            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         h2::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--gold-accent);
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold-accent), transparent);
         }
 
         .narrative-content p {
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: justify;
         }
 
         .narrative-content strong { color: var(--primary-navy); }
 
-        /* --- INNER PORTFOLIO BOX --- */
+        /* --- PORTFOLIO ACTION AREA --- */
         .portfolio-box {
-            background: #f1f5f9;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             border: 1px solid #e2e8f0;
-            padding: 35px;
-            border-radius: 15px;
+            padding: 45px;
+            border-radius: 22px;
             text-align: center;
-            margin-top: 35px;
+            margin-top: 50px;
         }
 
         .portfolio-box h3 {
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             color: var(--primary-navy);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
         }
 
         .btn-wrap {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 14px 30px;
-            border-radius: 8px;
+            padding: 18px 40px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 800;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-navy { background-color: var(--primary-navy); color: white; }
-        .btn-navy:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 45, 91, 0.3); }
+        .btn-navy:hover { 
+            background-color: var(--secondary-navy);
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(0, 45, 91, 0.3); 
+        }
 
-        .btn-outline { border: 2px solid var(--primary-navy); color: var(--primary-navy); }
-        .btn-outline:hover { background: var(--primary-navy); color: white; }
+        .btn-outline { border: 2.5px solid var(--primary-navy); color: var(--primary-navy); }
+        .btn-outline:hover { 
+            background: var(--primary-navy); 
+            color: white; 
+            transform: translateY(-5px);
+        }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 60px;
             color: var(--text-light);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 3px;
             border-top: 1px solid #e2e8f0;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .main-card { padding: 30px; }
+            header h1 { font-size: 2.5rem; }
+            header img { width: 180px; height: 180px; }
+            .main-card { padding: 40px; }
+            nav a { margin: 0 15px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -200,7 +213,7 @@
     </div>
     <h1>Teacher Fahadh</h1>
     <div class="header-tags">
-        ICT Department Lead | Edexcel Specialist | Systems Advisor
+        ICT Department Lead | Edexcel Specialist
     </div>
 </header>
 
@@ -215,18 +228,19 @@
     <div class="main-card">
         <h2>Professional Narrative</h2>
         <div class="narrative-content">
-            <p>I am <strong>Teacher Fahadh</strong>, a strategic ICT educator and systems advisor focused on the intersection of pedagogy and high-level digital infrastructure. My work centers on the <strong>Pearson Edexcel</strong> curriculum, where I translate complex technical concepts into actionable skills for the next generation of digital leaders.</p>
-            <p>Beyond the classroom, I specialize in <strong>Digital Transformation</strong>—helping institutions optimize their learning management systems and technical workflows for peak efficiency.</p>
+            <p>I am <strong>Teacher Fahadh</strong>, an experienced ICT Department Lead and dedicated educator specializing in high-level digital instruction and academic management. My focus is on the <strong>Pearson Edexcel</strong> curriculum, where I translate complex technical concepts into practical, actionable skills for the next generation of digital leaders.</p>
+            
+            <p>With a proven track record in academic leadership, I specialize in <strong>Digital Transformation</strong>—helping educational institutions optimize their learning management systems (LMS) and technical workflows to ensure peak instructional efficiency. I am committed to fostering technical proficiency and innovation across all levels of ICT education.</p>
         </div>
 
         <div class="portfolio-box">
-            <h3>Career Portfolio</h3>
+            <h3>Career Documents</h3>
             <div class="btn-wrap">
                 <a href="cv.pdf" class="btn btn-navy">
-                    <i class="fa-solid fa-cloud-arrow-down"></i> Resume / CV
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume
                 </a>
                 <a href="coverpage.pdf" class="btn btn-outline">
-                    <i class="fa-solid fa-envelope-open"></i> Cover Letter
+                    <i class="fa-solid fa-file-lines"></i> Cover Letter
                 </a>
             </div>
         </div>
