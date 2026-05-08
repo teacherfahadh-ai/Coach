@@ -4,135 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Fahadh | ICT Coach</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-navy: #002347;
-            --accent-blue: #007bff;
-            --soft-gray: #f8f9fa;
-            --text-dark: #2d3436;
+            --primary: #001a33;
+            --accent: #00d2ff;
+            --secondary: #0072ff;
+            --text-main: #1a202c;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f0f2f5;
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f7fafc;
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        /* --- Modern Header --- */
+        /* --- Sophisticated Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, #00152b 100%);
-            color: white;
-            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: var(--white);
+            padding: 80px 20px 120px;
             text-align: center;
+            position: relative;
         }
 
         header img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.2);
+            border: 6px solid rgba(255, 255, 255, 0.1);
             object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
-        header h1 { margin: 10px 0; font-size: 2.5rem; letter-spacing: -1px; }
-        .tagline { color: #00d4ff; font-weight: 600; font-size: 1.1rem; margin-bottom: 20px; }
+        header img:hover { transform: scale(1.05); }
 
-        .contact-info {
+        header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; }
+        
+        .badge {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .contact-bar {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            font-size: 0.9rem;
-            max-width: 800px;
+            gap: 25px;
+            max-width: 900px;
             margin: 0 auto;
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .contact-info span { opacity: 0.9; display: flex; align-items: center; gap: 8px; }
+        .contact-bar span { display: flex; align-items: center; gap: 8px; }
+        .contact-bar i { color: var(--accent); }
 
-        /* --- Navigation --- */
+        /* --- Sticky Nav --- */
         nav {
-            background: #ffffff;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         nav a {
             text-decoration: none;
-            color: var(--primary-navy);
-            font-weight: 600;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 0 20px;
             font-size: 0.9rem;
-            text-transform: uppercase;
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--accent-blue); }
+        nav a:hover { color: var(--secondary); }
 
         /* --- Main Content --- */
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: -60px auto 60px;
             padding: 0 20px;
+            position: relative;
         }
 
-        .section {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        .card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
         }
 
-        h2 { color: var(--primary-navy); border-left: 5px solid var(--accent-blue); padding-left: 15px; margin-bottom: 25px; }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
-        /* --- Download Buttons --- */
-        .hire-me {
-            background: #ffffff;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .summary-text p { margin-bottom: 20px; color: var(--text-light); font-size: 1.1rem; }
+        .summary-text strong { color: var(--primary); }
+
+        /* --- Action Area --- */
+        .action-area {
             text-align: center;
-            padding: 50px 20px;
-            border-top: 1px solid #eee;
+            margin-top: 40px;
+            padding: 40px;
+            background: #edf2f7;
+            border-radius: 20px;
         }
 
-        .btn-group {
+        .btn-container {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 25px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        .hire-btn {
+        .btn {
+            padding: 18px 35px;
+            border-radius: 12px;
             text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-            display: inline-flex;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            transition: all 0.3s ease;
         }
 
-        .cv-btn { background-color: var(--primary-navy); color: white; }
-        .cover-btn { background-color: #27ae60; color: white; }
+        .btn-cv { background: var(--primary); color: white; }
+        .btn-cl { background: #2d3748; color: white; }
 
-        .hire-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            opacity: 0.9;
+        }
 
         footer {
-            background: var(--primary-navy);
+            background: var(--primary);
             color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px;
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .card { padding: 30px; }
+            .container { margin-top: -40px; }
         }
     </style>
 </head>
@@ -141,14 +195,15 @@
 
 <header>
     <img src="profile.jpg" alt="Teacher Fahadh">
+    <br>
+    <span class="badge">Professional Portfolio</span>
     <h1>Teacher Fahadh</h1>
-    <p class="tagline">ICT Coach | Pearson Edexcel Specialist | Digital Learning Expert</p>
     
-    <div class="contact-info">
-        <span><i class="fas fa-map-marker-alt"></i> Hargeisa, Somaliland</span>
-        <span><i class="fas fa-envelope"></i> teacherfahadh@gmail.com</span>
-        <span><i class="fas fa-phone"></i> +252 636 710 907</span>
-        <span><i class="fas fa-globe"></i> teacherfahadh.github.io</span>
+    <div class="contact-bar">
+        <span><i class="fa-solid fa-location-dot"></i> Hargeisa, Somaliland</span>
+        <span><i class="fa-solid fa-envelope"></i> teacherfahadh@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> +252 636 710 907</span>
+        <span><i class="fa-solid fa-globe"></i> teacherfahadh.github.io</span>
     </div>
 </header>
 
@@ -161,30 +216,31 @@
 </nav>
 
 <div class="container">
-    <div class="section">
+    <div class="card">
         <h2>Professional Summary</h2>
-        <p>I am <strong>Teacher Fahadh</strong>, a passionate and dedicated ICT educator committed to empowering students with essential digital skills for the modern world. With deep expertise in Pearson Edexcel ICT and international school standards, I deliver engaging, student-centered lessons that foster critical thinking and problem-solving.</p>
-        
-        <p>I specialize in integrating technology into the curriculum, building student confidence in digital literacy, coding, and real-world ICT applications. My approach emphasizes practical innovation and academic excellence, ensuring success in both examinations and future careers.</p>
+        <div class="summary-text">
+            <p>I am <strong>Teacher Fahadh</strong>, an ICT educator dedicated to bridging the gap between students and the digital age. Specializing in <strong>Pearson Edexcel</strong> standards, I transform classrooms into innovation hubs where critical thinking meets technical mastery.</p>
+            
+            <p>My expertise lies in crafting engaging, hands-on learning experiences in coding, digital literacy, and data management. I believe in a student-centered approach that focuses on preparing learners not just for exams, but for global leadership in a tech-driven economy.</p>
+        </div>
+
+        <div class="action-area">
+            <h3>Documents & Portfolio</h3>
+            <p>Click below to download my professional credentials</p>
+            <div class="btn-container">
+                <a href="cv.pdf" class="btn btn-cv">
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume
+                </a>
+                <a href="coverpage.pdf" class="btn btn-cl">
+                    <i class="fa-solid fa-paper-plane"></i> Cover Letter
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
-<section class="hire-me">
-    <h2>RESOURCES & DOCUMENTS</h2>
-    <p>Access my professional documents using the buttons below:</p>
-    
-    <div class="btn-group">
-        <a href="cv.pdf" class="hire-btn cv-btn">
-            <i class="fas fa-file-pdf"></i> DOWNLOAD RESUME
-        </a>
-        <a href="coverpage.pdf" class="hire-btn cover-btn">
-            <i class="fas fa-envelope-open-text"></i> COVER LETTER
-        </a>
-    </div>
-</section>
-
 <footer>
-    <p>© 2026 Teacher Fahadh | Empowering Future Digital Leaders</p>
+    <p>© 2026 Teacher Fahadh | Building Digital Futures with Excellence</p>
 </footer>
 
 </body>
