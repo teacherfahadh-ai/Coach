@@ -4,207 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Fahadh | ICT & Computer Science Educator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-navy: #0a2540;
-            --secondary-navy: #05192d;
-            --gold-accent: #c5a059;
-            --gold-glow: rgba(197, 160, 89, 0.4);
-            --text-dark: #1e293b;
-            --text-light: #64748b;
+            --primary: #002147; /* Academic Deep Navy */
+            --secondary: #d4af37; /* Professional Gold Accent */
+            --accent: #0056b3;
+            --bg: #f5f7fa;
             --white: #ffffff;
-            --bg-body: #f8fafc;
-            --shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            --text-main: #1a1a1a;
+            --text-muted: #535c68;
+            --radius: 12px;
+            --shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-dark);
-            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* --- PRESTIGE HEADER --- */
+        /* --- Elegant Header (Matches About Page) --- */
         header {
-            background: linear-gradient(rgba(10, 37, 64, 0.95), rgba(10, 37, 64, 0.95)), 
-                        url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), var(--secondary-navy);
-            color: var(--white);
-            padding: 100px 20px 80px;
+            background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
+            padding: 80px 20px;
             text-align: center;
-            border-bottom: 8px solid var(--gold-accent);
-        }
-
-        .profile-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
+            color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
         header img {
-            width: 240px; /* Enhanced for visibility */
-            height: 240px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 5px solid var(--gold-accent);
+            border: 4px solid var(--secondary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
             object-fit: cover;
-            box-shadow: 0 0 60px var(--gold-glow);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 20px;
+            transition: 0.3s ease;
         }
 
         header img:hover { transform: scale(1.05); }
 
-        header h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-        }
+        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
+        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
 
-        .header-sub {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--gold-accent);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        /* --- MODERN NAVIGATION --- */
+        /* --- Floating Navigation --- */
         nav {
-            background-color: var(--white);
-            padding: 22px 0;
-            text-align: center;
+            background: var(--white);
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: var(--primary-navy);
+            color: var(--primary);
             text-decoration: none;
-            margin: 0 25px;
-            font-size: 0.9rem;
-            font-weight: 700;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            transition: 0.3s;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            transition: all 0.3s;
         }
 
-        nav a:hover { color: var(--gold-accent); }
+        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
 
-        /* --- REFINED CONTENT --- */
+        /* --- Content Container --- */
         .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 25px;
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
         }
 
-        .profile-card {
+        .section {
             background: var(--white);
-            padding: 60px;
-            border-radius: 32px;
+            padding: 45px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0,0,0,0.03);
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         h2 {
-            font-size: 2rem;
-            color: var(--primary-navy);
+            color: var(--primary);
+            font-size: 1.4rem;
             margin-bottom: 25px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(to right, var(--gold-accent), transparent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 10px;
+            display: inline-block;
         }
 
         .bio-text p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
             text-align: justify;
         }
 
-        .bio-text strong { color: var(--primary-navy); font-weight: 700; }
+        .bio-text strong { color: var(--primary); font-weight: 700; }
 
-        /* --- DOWNLOAD SECTION --- */
+        /* --- Action Buttons (Updated to match Navy/Gold) --- */
         .action-box {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            padding: 40px;
-            border-radius: 24px;
+            background: #f9fbff;
+            padding: 30px;
+            border-radius: var(--radius);
             text-align: center;
-            margin-top: 40px;
-        }
-
-        .action-box h3 {
-            font-size: 0.95rem;
-            color: var(--primary-navy);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+            margin-top: 30px;
+            border: 1px solid #eef2f7;
         }
 
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 16px 35px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
+            gap: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .btn-navy { background-color: var(--primary-navy); color: white; }
-        .btn-navy:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(10, 37, 64, 0.2); }
+        .btn-navy { background-color: var(--primary); color: white; }
+        .btn-navy:hover { background-color: var(--accent); transform: translateY(-3px); }
 
-        .btn-outline { border: 2px solid var(--primary-navy); color: var(--primary-navy); }
-        .btn-outline:hover { background: var(--primary-navy); color: white; transform: translateY(-4px); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
         footer {
+            background: var(--primary);
+            color: var(--white);
             text-align: center;
-            padding: 50px;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            border-top: 1px solid #e2e8f0;
-            text-transform: uppercase;
+            padding: 50px 20px;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            header img { width: 180px; height: 180px; }
-            .profile-card { padding: 35px; }
-            nav a { margin: 0 10px; font-size: 0.8rem; }
+            header h1 { font-size: 2.2rem; }
+            .section { padding: 30px; }
+            nav a { margin: 0 10px; font-size: 0.75rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="profile-container">
-        <img src="profile.jpg" alt="Teacher Fahadh">
-    </div>
+    <img src="profile.jpg" alt="Teacher Fahadh">
     <h1>Teacher Fahadh</h1>
-    <div class="header-sub">ICT Educator | Pearson Edexcel Curriculum Specialist</div>
+    <p>ICT Educator | Pearson Edexcel Curriculum Specialist</p>
 </header>
 
 <nav>
@@ -215,7 +181,7 @@
 </nav>
 
 <div class="container">
-    <div class="profile-card">
+    <div class="section">
         <h2>Professional Biography</h2>
         <div class="bio-text">
             <p>I am <strong>Teacher Fahadh</strong>, a dedicated Computer Science and ICT Specialist based in Hargeisa, Somaliland. My mission is to empower the next generation of digital leaders by delivering high-quality, practical technical education tailored to the modern workforce.</p>
@@ -224,10 +190,9 @@
         </div>
 
         <div class="action-box">
-            <h3>Verified Recruitment Documents</h3>
             <div class="btn-group">
                 <a href="cv.pdf" class="btn btn-navy">
-                    <i class="fa-solid fa-file-arrow-down"></i> Download My CV
+                    <i class="fa-solid fa-file-arrow-down"></i> Download CV
                 </a>
                 <a href="coverpage.pdf" class="btn btn-outline">
                     <i class="fa-solid fa-paper-plane"></i> Review Cover Letter
@@ -238,7 +203,8 @@
 </div>
 
 <footer>
-    © 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland
+    <p>© 2026 Teacher Fahadh</p>
+    <p style="opacity: 0.5; font-size: 0.7rem; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Advancing Digital Literacy in Somaliland</p>
 </footer>
 
 </body>
