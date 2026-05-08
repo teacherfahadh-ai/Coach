@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Teacher Fahadh</title>
+    <title>Projects & Experience | Teacher Fahadh</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -19,6 +19,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            margin: 0;
         }
 
         header {
@@ -29,17 +30,13 @@
         }
 
         header img {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             object-fit: cover;
             margin-bottom: 15px;
         }
-
-        header h1 { font-size: 2.2rem; margin: 10px 0; letter-spacing: -1px; }
-        header p { font-weight: 300; opacity: 0.9; font-size: 1.1rem; }
 
         nav {
             background: #003366;
@@ -55,11 +52,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
         }
-
-        nav a:hover { color: #00d4ff; }
 
         .container {
             max-width: 1000px;
@@ -73,82 +66,67 @@
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             margin-bottom: 30px;
-            border: 1px solid rgba(0,0,0,0.03);
         }
 
         h2 {
             color: var(--primary-blue);
-            font-size: 1.5rem;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 15px;
         }
 
-        h2::after {
-            content: "";
-            height: 3px;
-            width: 50px;
-            background: var(--accent-blue);
-            margin-left: 15px;
-            border-radius: 2px;
+        /* Project List Styling */
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            list-style: none;
+            padding: 0;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        .project-list li {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #dee2e6;
+            font-size: 0.95rem;
         }
 
-        .skills span {
-            background: #f1f3f5;
-            padding: 8px 18px;
-            border-radius: 10px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #495057;
-            transition: all 0.3s ease;
-        }
-
-        .skills span:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .credential-grid {
+        /* Testimonials Grid */
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
-        .cert-card {
+        .testimonial-card {
             background: #fff;
-            padding: 15px;
+            padding: 25px;
             border-radius: 12px;
-            text-align: center;
             border: 1px solid #eee;
-            transition: all 0.4s ease;
+            font-style: italic;
+            position: relative;
         }
 
-        .cert-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .testimonial-card p {
             margin-bottom: 15px;
+            color: #444;
         }
 
-        .cert-card p {
-            font-size: 0.95rem;
+        .testimonial-card span {
+            display: block;
             font-weight: 700;
-            color: #333;
+            font-style: normal;
+            color: var(--primary-blue);
+            font-size: 0.85rem;
         }
 
         footer {
             background: #002d5f;
             color: white;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            font-size: 0.9rem;
+            padding: 25px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -157,7 +135,7 @@
 <header>
     <img src="profile.jpg" alt="Teacher Fahadh">
     <h1>Teacher Fahadh</h1>
-    <p>ICT Teacher | Pearson Edexcel Specialist | Educational Coach</p>
+    <p>ICT Coach | Pearson Edexcel Specialist</p>
 </header>
 
 <nav>
@@ -171,48 +149,49 @@
 <div class="container">
 
     <div class="section">
-        <h2>My Teaching Philosophy</h2>
-        <p>
-            As an <strong>ICT Teacher</strong>, I believe that technology is a powerful tool that transforms learning, creativity, and problem-solving. My teaching philosophy centers on preparing students for a digital future by developing their technical skills, critical thinking, and confidence in using technology effectively.
-        </p>
-        <p>
-            I strive to create student-centered learning environments where learners actively engage in hands-on activities, collaborative projects, and real-world application. As a Pearson Edexcel Specialist, my focus is on delivering international standards in digital literacy, programming, and data management.
-        </p>
+        <h2>ICT Projects</h2>
+        <ul class="project-list">
+            <li>Student Portfolio Website</li>
+            <li>School ICT System</li>
+            <li>Digital Learning Platform</li>
+            <li>Online ICT Resources</li>
+            <li>Data Handling & Spreadsheet Project</li>
+            <li>Digital Presentation Project</li>
+            <li>ICT Research & Innovation Project</li>
+            <li>Coding for Beginners Project</li>
+            <li>Digital Literacy & Productivity Project</li>
+            <li>Website Development Project</li>
+            <li>ICT Digital Club Project</li>
+            <li>Operating Online Project</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2>Teaching Skills</h2>
-        <div class="skills">
-            <span>Pearson Edexcel ICT</span>
-            <span>Coding & Programming</span>
-            <span>Web Development</span>
-            <span>Google Classroom & LMS</span>
-            <span>Spreadsheet & Database</span>
-            <span>Graphic Design</span>
-            <span>Video Editing</span>
-            <span>Cyber Security Awareness</span>
-            <span>Cloud Management</span>
-            <span>Multimedia Presentations</span>
-        </div>
+        <h2>Certifications</h2>
+        <ul class="project-list">
+            <li>ICT Teaching Certification</li>
+            <li>Digital Skills Certification</li>
+            <li>Education Technology Training</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2>Professional Credentials</h2>
-        <div class="credential-grid">
+        <h2>Testimonials</h2>
+        <div class="testimonial-grid">
             
-            <div class="cert-card">
-                <img src="cert1.jpg" alt="Bachelor of Business IT">
-                <p>Bachelor of Business IT (JKUAT)</p>
+            <div class="testimonial-card">
+                <p>"Fahadh is an outstanding ICT teacher."</p>
+                <span>- School Administrator</span>
             </div>
 
-            <div class="cert-card">
-                <img src="cert2.jpg" alt="E-commerce & Web Certification">
-                <p>E-commerce & Web Design</p>
+            <div class="testimonial-card">
+                <p>"Very professional educator."</p>
+                <span>- Senior Teacher</span>
             </div>
 
-            <div class="cert-card">
-                <img src="cert3.jpg" alt="Digital Marketing Certification">
-                <p>Digital Marketing & SEO Strategy</p>
+            <div class="testimonial-card">
+                <p>"Students improved significantly."</p>
+                <span>- Head of Department</span>
             </div>
 
         </div>
@@ -221,7 +200,7 @@
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh. Built with passion for technology and education.</p>
+    <p>© 2026 Teacher Fahadh</p>
 </footer>
 
 </body>
