@@ -4,223 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Fahadh | Strategic ICT Advisor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --card-dark: #1e293b;
-            --neon-accent: #22d3ee;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            --primary-navy: #002d5b;
+            --secondary-navy: #001f3f;
+            --gold-accent: #d4af37;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --white: #ffffff;
+            --bg-off-white: #f8fafc;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-off-white);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* --- TECH-MINIMAL HEADER --- */
+        /* --- PRESTIGE HEADER --- */
         header {
-            padding: 100px 20px;
+            background: linear-gradient(rgba(0, 31, 63, 0.9), rgba(0, 31, 63, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png'), var(--secondary-navy);
+            color: var(--white);
+            padding: 80px 20px 60px;
             text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            border-bottom: 5px solid var(--gold-accent);
         }
 
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 24px; /* Modern squircle instead of circle */
-            transform: rotate(-3deg);
-            border: 2px solid var(--neon-accent);
-            object-fit: cover;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -2px;
-            background: linear-gradient(to right, #fff, var(--neon-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-
-        .title-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .title-tag {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--neon-accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid var(--neon-accent);
-            padding: 5px 15px;
-            border-radius: 4px;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-            text-align: center;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--neon-accent); }
-
-        /* --- MAIN LAYOUT --- */
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .glass-card {
-            background: var(--card-dark);
-            padding: 50px;
-            border-radius: 32px;
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-            margin-left: 20px;
-        }
-
-        .summary-content p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
+        .profile-wrap {
+            position: relative;
+            display: inline-block;
             margin-bottom: 25px;
         }
 
-        /* --- ACTION SECTION --- */
-        .download-zone {
-            background: rgba(34, 211, 238, 0.05);
-            border: 1px solid var(--neon-accent);
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
+        header img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--gold-accent);
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
         }
 
-        .download-zone h3 { margin-bottom: 10px; color: var(--neon-accent); }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .header-tags {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* --- STICKY NAV --- */
+        nav {
+            background-color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            color: var(--primary-navy);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--gold-accent); }
+
+        /* --- CONTENT CARDS --- */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .main-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid #edf2f7;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary-navy);
+            margin-bottom: 25px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold-accent);
+        }
+
+        .narrative-content p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .narrative-content strong { color: var(--primary-navy); }
+
+        /* --- INNER PORTFOLIO BOX --- */
+        .portfolio-box {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .portfolio-box h3 {
+            font-size: 0.9rem;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
 
         .btn-wrap {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 16px 32px;
+            padding: 14px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: 0.3s;
         }
 
-        .btn-neon { background: var(--neon-accent); color: var(--bg-dark); }
-        .btn-ghost { border: 1px solid var(--text-secondary); color: var(--text-secondary); }
+        .btn-navy { background-color: var(--primary-navy); color: white; }
+        .btn-navy:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 45, 91, 0.3); }
 
-        .btn:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .btn-outline { border: 2px solid var(--primary-navy); color: var(--primary-navy); }
+        .btn-outline:hover { background: var(--primary-navy); color: white; }
 
         footer {
-            padding: 60px;
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
+            padding: 40px;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid #e2e8f0;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .glass-card { padding: 30px; }
+            header h1 { font-size: 2rem; }
+            .main-card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="profile.jpg" alt="Teacher Fahadh">
+    <div class="profile-wrap">
+        <img src="profile.jpg" alt="Teacher Fahadh">
+    </div>
     <h1>Teacher Fahadh</h1>
-    <div class="title-container">
-        <span class="title-tag">ICT Department Lead</span>
-        <span class="title-tag">Edexcel Specialist</span>
-        <span class="title-tag">Systems Advisor</span>
+    <div class="header-tags">
+        ICT Department Lead | Edexcel Specialist | Systems Advisor
     </div>
 </header>
 
 <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="experience.html">EXPERIENCE</a>
-    <a href="projects.html">PROJECTS</a>
-    <a href="contact.html">CONTACT</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
-    <div class="glass-card">
+    <div class="main-card">
         <h2>Professional Narrative</h2>
-        <div class="summary-content">
+        <div class="narrative-content">
             <p>I am <strong>Teacher Fahadh</strong>, a strategic ICT educator and systems advisor focused on the intersection of pedagogy and high-level digital infrastructure. My work centers on the <strong>Pearson Edexcel</strong> curriculum, where I translate complex technical concepts into actionable skills for the next generation of digital leaders.</p>
             <p>Beyond the classroom, I specialize in <strong>Digital Transformation</strong>—helping institutions optimize their learning management systems and technical workflows for peak efficiency.</p>
         </div>
 
-        <div class="download-zone">
-            <h3>CAREER PORTFOLIO</h3>
-            <p>Select a document to review my technical background and credentials.</p>
+        <div class="portfolio-box">
+            <h3>Career Portfolio</h3>
             <div class="btn-wrap">
-                <a href="cv.pdf" class="btn btn-neon">
+                <a href="cv.pdf" class="btn btn-navy">
                     <i class="fa-solid fa-cloud-arrow-down"></i> Resume / CV
                 </a>
-                <a href="coverpage.pdf" class="btn btn-ghost">
+                <a href="coverpage.pdf" class="btn btn-outline">
                     <i class="fa-solid fa-envelope-open"></i> Cover Letter
                 </a>
             </div>
@@ -229,7 +234,7 @@
 </div>
 
 <footer>
-    <p>© 2026 TEACHER FAHADH | ENGINEERED FOR EDUCATIONAL EXCELLENCE</p>
+    © 2026 Teacher Fahadh | Engineered for Educational Excellence
 </footer>
 
 </body>
