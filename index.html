@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Fahadh | ICT & Computer Science Educator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* --- Elegant Header (Matches About Page) --- */
+        /* --- Elegant Header --- */
         header {
             background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
@@ -46,10 +46,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
             object-fit: cover;
             margin-bottom: 20px;
-            transition: 0.3s ease;
         }
-
-        header img:hover { transform: scale(1.05); }
 
         header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
         header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
@@ -93,30 +90,33 @@
             margin-bottom: 35px;
         }
 
-        h2 {
+        /* --- Enhanced Professional Biography Title --- */
+        h2.bio-title {
             color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--bg);
-            padding-bottom: 10px;
-            display: inline-block;
+            letter-spacing: 2px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+            display: block;
+            border-bottom: 3px solid var(--secondary);
         }
 
         .bio-text p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: justify;
         }
 
         .bio-text strong { color: var(--primary); font-weight: 700; }
 
-        /* --- Action Buttons (Updated to match Navy/Gold) --- */
+        /* --- Action Buttons --- */
         .action-box {
             background: #f9fbff;
-            padding: 30px;
+            padding: 35px;
             border-radius: var(--radius);
             text-align: center;
             margin-top: 30px;
@@ -126,42 +126,73 @@
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 14px 28px;
+            padding: 16px 32px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .btn-navy { background-color: var(--primary); color: white; }
-        .btn-navy:hover { background-color: var(--accent); transform: translateY(-3px); }
+        .btn-navy:hover { background-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,33,71,0.2); }
 
         .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
         .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
+        /* --- Enhanced Footer with Links --- */
         footer {
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover { opacity: 1; color: var(--secondary); }
+
+        .footer-bottom {
             font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        .footer-tagline {
+            opacity: 0.5;
+            font-size: 0.75rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
             .section { padding: 30px; }
-            nav a { margin: 0 10px; font-size: 0.75rem; }
+            .footer-links a { display: block; margin: 10px 0; }
         }
     </style>
 </head>
@@ -182,7 +213,7 @@
 
 <div class="container">
     <div class="section">
-        <h2>Professional Biography</h2>
+        <h2 class="bio-title">Professional Biography</h2>
         <div class="bio-text">
             <p>I am <strong>Teacher Fahadh</strong>, a dedicated Computer Science and ICT Specialist based in Hargeisa, Somaliland. My mission is to empower the next generation of digital leaders by delivering high-quality, practical technical education tailored to the modern workforce.</p>
             
@@ -203,8 +234,17 @@
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh</p>
-    <p style="opacity: 0.5; font-size: 0.7rem; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Advancing Digital Literacy in Somaliland</p>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Teacher Fahadh</p>
+        <p class="footer-tagline">Advancing Digital Excellence in Somaliland</p>
+    </div>
 </footer>
 
 </body>
