@@ -11,12 +11,12 @@
             --primary: #002147; 
             --secondary: #d4af37; 
             --accent: #0056b3;
-            --bg: #f8fafc;
+            --bg: #f4f7f6;
             --white: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --radius: 16px;
-            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --text-main: #1a1a1a;
+            --text-muted: #535c68;
+            --radius: 12px;
+            --shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,168 +28,183 @@
             line-height: 1.6;
         }
 
-        /* --- Hero Header --- */
+        /* --- Header Section --- */
         header {
-            background: linear-gradient(135deg, rgba(0, 33, 71, 0.95), rgba(0, 50, 100, 0.95)), 
-                        url('https://www.transparenttextures.com/patterns/gplay.png'), var(--primary);
-            padding: 100px 20px;
+            background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
+            padding: 80px 20px;
             text-align: center;
             color: var(--white);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
         header img {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 5px solid var(--secondary);
+            border: 4px solid var(--secondary);
             margin-bottom: 20px;
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
-        header p { color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
+        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
 
-        /* --- Separated Navigation --- */
-        .nav-sticky {
+        /* --- SEPARATED NAVIGATION BLOCK --- */
+        .nav-container {
+            background: var(--white);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
         }
 
         nav a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 6px;
         }
 
-        nav a:hover { color: var(--secondary); }
+        nav a:hover { 
+            background: var(--primary);
+            color: var(--white);
+        }
 
-        /* --- Main Content Layout --- */
+        /* --- CONTENT CONTAINER --- */
         .container {
-            max-width: 1100px;
-            margin: -40px auto 80px;
+            max-width: 1000px;
+            margin: 0 auto 60px;
             padding: 0 20px;
         }
 
-        .section {
+        /* --- SEPARATED PROFESSIONAL OVERVIEW BLOCK --- */
+        .overview-block {
             background: var(--white);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             margin-bottom: 40px;
+            border-left: 8px solid var(--secondary);
             overflow: hidden;
         }
 
-        /* --- Professional Overview Specific --- */
-        .overview-container {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            min-height: 400px;
+        .overview-header {
+            background: #f9f9f9;
+            padding: 30px 45px;
+            border-bottom: 1px solid #eee;
         }
 
-        .overview-sidebar {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-right: 6px solid var(--secondary);
+        .overview-body {
+            padding: 45px;
         }
 
-        .overview-sidebar h2 { font-size: 1.8rem; line-height: 1.2; }
-
-        .overview-content {
-            padding: 50px;
-            background: #fff;
+        h2.exp-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
         }
 
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-style: italic;
-            position: relative;
+        .intro-text { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 35px; line-height: 1.8; }
+
+        /* --- Experience Cards --- */
+        .job-card {
+            background: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            padding: 30px;
+            border-radius: 10px;
         }
 
-        .job-card h3 { color: var(--primary); margin-bottom: 5px; font-size: 1.5rem; }
-        .job-card .company { color: var(--accent); font-weight: 700; display: block; margin-bottom: 20px; }
+        .job-card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 5px; }
+        .job-card .company { color: var(--secondary); font-weight: 700; font-size: 1rem; margin-bottom: 20px; display: block; }
 
         .task-list { list-style: none; }
         .task-list li {
             position: relative;
-            padding-left: 30px;
+            padding-left: 25px;
             margin-bottom: 12px;
-            color: var(--text-main);
+            color: var(--text-muted);
         }
 
         .task-list li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
+            content: "→";
             position: absolute;
             left: 0;
             color: var(--secondary);
+            font-weight: bold;
         }
 
-        /* --- Achievements --- */
-        .achievements-header {
-            padding: 40px 50px 20px;
-            text-align: center;
+        /* --- Achievement Section --- */
+        .achievements-block {
+            margin-top: 60px;
         }
 
         .achievement-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            padding: 0 40px 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .achieve-card {
-            background: #f1f5f9;
-            padding: 30px;
-            border-radius: 12px;
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
             transition: 0.3s;
         }
 
-        .achieve-card:hover { transform: translateY(-5px); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .achieve-card:hover { transform: translateY(-10px); border-top-color: var(--secondary); }
 
-        .achieve-card i { color: var(--secondary); font-size: 1.8rem; margin-bottom: 15px; display: block; }
-        .achieve-card h4 { color: var(--primary); margin-bottom: 10px; }
+        .achieve-card i { color: var(--secondary); font-size: 1.8rem; margin-bottom: 20px; display: block; }
+        .achieve-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
+        .achieve-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
         /* --- Footer --- */
         footer {
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            margin-top: 100px;
         }
 
-        .footer-links { margin-bottom: 25px; }
-        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 15px; font-size: 0.8rem; transition: 0.3s; }
-        .footer-links a:hover { color: var(--secondary); }
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
 
-        @media (max-width: 850px) {
-            .overview-container { grid-template-columns: 1fr; }
-            .overview-sidebar { border-right: none; border-bottom: 6px solid var(--secondary); }
-            nav { gap: 15px; }
+        .footer-links a:hover { opacity: 1; color: var(--secondary); }
+
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; opacity: 0.8; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .overview-body { padding: 30px; }
+            nav { flex-direction: column; align-items: center; gap: 10px; }
         }
     </style>
 </head>
@@ -201,7 +216,7 @@
     <p>Cultivating Excellence in Digital Education</p>
 </header>
 
-<div class="nav-sticky">
+<div class="nav-container">
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -211,36 +226,35 @@
 </div>
 
 <div class="container">
-    <div class="section">
-        <div class="overview-container">
-            <div class="overview-sidebar">
-                <h2>Professional Overview</h2>
-            </div>
-            <div class="overview-content">
-                <p class="intro-text">
-                    I am a passionate and dedicated ICT teacher with experience in delivering engaging, student-centered lessons that promote digital literacy, critical thinking, and problem-solving skills.
-                </p>
+    <div class="overview-block">
+        <div class="overview-header">
+            <h2 class="exp-title">Professional Overview</h2>
+        </div>
+        <div class="overview-body">
+            <p class="intro-text">
+                I am a passionate and dedicated ICT teacher with experience in delivering engaging, student-centered lessons that promote digital literacy, critical thinking, and problem-solving skills. My teaching experience focuses on preparing students for modern technological environments while supporting academic excellence.
+            </p>
 
-                <div class="job-card">
-                    <h3>ICT Teaching Specialist</h3>
-                    <span class="company">@ELM School, Hargeisa</span>
-                    <ul class="task-list">
-                        <li>Delivering Pearson Edexcel Curriculum for Secondary School Level.</li>
-                        <li>Planning and preparing engaging ICT lessons focusing on computer fundamentals.</li>
-                        <li>Guiding students through practical ICT projects and examination coursework.</li>
-                        <li>Integrating technology into classroom teaching and managing computer labs.</li>
-                        <li>Supporting diverse learning abilities and fostering digital literacy.</li>
-                    </ul>
-                </div>
+            <div class="job-card">
+                <h3>ICT Teaching Specialist</h3>
+                <span class="company">@ELM School, Hargeisa</span>
+                <ul class="task-list">
+                    <li>Delivering Pearson Edexcel Curriculum for Secondary School Level.</li>
+                    <li>Planning and preparing engaging ICT lessons focusing on computer fundamentals.</li>
+                    <li>Guiding students through practical ICT projects and examination coursework.</li>
+                    <li>Integrating technology into classroom teaching and managing computer labs.</li>
+                    <li>Supporting diverse learning abilities and fostering digital literacy.</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <div class="achievements-header">
-            <h2 style="color: var(--primary); font-size: 1.8rem; text-transform: uppercase;">Professional Achievements</h2>
-            <hr style="width: 50px; border: 2px solid var(--secondary); margin: 15px auto;">
+    <div class="achievements-block">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="exp-title">Professional Achievements</h2>
+            <div style="width: 60px; height: 4px; background: var(--secondary); margin: 15px auto;"></div>
         </div>
+        
         <div class="achievement-grid">
             <div class="achieve-card">
                 <i class="fa-solid fa-book-open"></i>
@@ -273,7 +287,9 @@
         <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
     </div>
-    <p style="opacity: 0.5; font-size: 0.8rem;">© 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
+    <div class="footer-bottom">
+        <p>© 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
+    </div>
 </footer>
 
 </body>
