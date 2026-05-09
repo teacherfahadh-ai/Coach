@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #002147; /* Academic Deep Navy */
-            --secondary: #d4af37; /* Professional Gold Accent */
+            --primary: #002147; 
+            --secondary: #d4af37; 
             --accent: #0056b3;
             --bg: #f5f7fa;
             --white: #ffffff;
@@ -27,13 +27,12 @@
             line-height: 1.6;
         }
 
-        /* --- Elegant Header --- */
         header {
             background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
-            padding: 80px 20px;
+            padding: 80px 20px 100px; /* Increased bottom padding */
             text-align: center;
             color: var(--white);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
 
         header img {
@@ -41,15 +40,13 @@
             height: 140px;
             border-radius: 50%;
             border: 4px solid var(--secondary);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            object-fit: cover;
             margin-bottom: 20px;
+            object-fit: cover;
         }
 
-        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; }
-        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
+        header h1 { font-size: 2.8rem; margin-bottom: 8px; }
+        header p { color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- Floating Navigation --- */
         nav {
             background: var(--white);
             padding: 18px 0;
@@ -67,16 +64,11 @@
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: all 0.3s;
         }
 
-        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
-
-        /* --- Content Container --- */
         .container {
             max-width: 1100px;
-            margin: -40px auto 60px;
+            margin: 40px auto 60px; /* Changed from -40px to 40px to fix visibility */
             padding: 0 20px;
         }
 
@@ -88,32 +80,16 @@
             margin-bottom: 35px;
         }
 
-        /* --- Teaching Philosophy Highlighting --- */
-        .philosophy-card {
-            border: 2px solid var(--secondary);
-            background: linear-gradient(to right, #ffffff, #fffdfa);
-        }
-
-        .philosophy-content {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .philosophy-text { flex: 2; }
-        .philosophy-quotes {
-            flex: 1;
-            background: var(--bg);
-            padding: 20px;
-            border-radius: var(--radius);
-            font-size: 0.9rem;
-            border-left: 5px solid var(--secondary);
+        /* --- Featured Philosophy Styling --- */
+        .highlight-section {
+            border-left: 6px solid var(--secondary);
+            background: linear-gradient(to right, #ffffff, #fcfaf5);
         }
 
         h2 {
             color: var(--primary);
             font-size: 1.4rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-bottom: 2px solid var(--bg);
@@ -121,54 +97,16 @@
             display: inline-block;
         }
 
-        /* --- Skills & Project Tags --- */
-        .skill-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
+        .skill-grid { display: flex; flex-wrap: wrap; gap: 12px; }
         .skill-tag {
             background: #f0f3f7;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--primary);
-            transition: 0.3s;
         }
 
-        .skill-tag:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        /* --- Grid Lists --- */
-        .list-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            list-style: none;
-        }
-
-        .list-grid li {
-            padding: 15px;
-            background: #f9fbff;
-            border-radius: 8px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-        }
-
-        .list-grid li::before {
-            content: "•";
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        /* --- Certificate Gallery --- */
         .credential-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -177,56 +115,22 @@
 
         .cert-card {
             border: 1px solid #eee;
-            padding: 15px;
+            padding: 20px;
             border-radius: var(--radius);
             text-align: center;
-            transition: 0.4s;
-            background: #fff;
+            transition: 0.3s;
         }
 
-        .cert-card:hover { border-color: var(--secondary); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .cert-card:hover { border-color: var(--secondary); transform: translateY(-5px); }
+        .cert-card img { width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #f0f0f0; }
+        .cert-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 5px; }
+        .cert-card p { font-size: 0.8rem; color: var(--text-muted); }
 
-        .cert-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            background: #fdfdfd;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
-
-        .cert-card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 5px; }
-        .cert-card p { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; }
-
-        /* --- Testimonials --- */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .testimonial-card {
-            padding: 30px;
-            border-radius: var(--radius);
-            background: #f9fbff;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .testimonial-card p { font-style: italic; color: var(--text-muted); margin-bottom: 15px; }
-        .testimonial-card span { font-weight: 700; color: var(--primary); font-size: 0.8rem; }
-
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 0.9rem;
-        }
+        footer { background: var(--primary); color: var(--white); text-align: center; padding: 40px; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
-            .section { padding: 25px; }
-            .philosophy-content { flex-direction: column; }
+            .container { margin-top: 20px; }
         }
     </style>
 </head>
@@ -247,19 +151,29 @@
 
 <div class="container">
 
-    <div class="section philosophy-card">
+    <div class="section highlight-section">
         <h2>Teaching Philosophy</h2>
-        <div class="philosophy-content">
-            <div class="philosophy-text">
-                <p>I believe technology is not just a subject, but the cornerstone of modern problem-solving. My pedagogical approach bridges the gap between <strong>theoretical logic</strong> and <strong>hands-on technical application</strong>.</p>
-                <p style="margin-top: 15px;">I strive to transform students from passive consumers of technology into proactive digital innovators who prioritize ethical citizenship and technical mastery.</p>
+        <p>I believe that technology is the cornerstone of modern education. My approach focuses on bridging the gap between theoretical knowledge and practical application, ensuring students are not just computer literate, but digital innovators.</p>
+        <p style="margin-top: 15px;">As an <strong>ICT Teacher</strong>, I am dedicated to fostering environments that encourage curiosity, ethical digital citizenship, and technical mastery.</p>
+    </div>
+
+    <div class="section">
+        <h2>Academic Credentials</h2>
+        <div class="credential-grid">
+            <div class="cert-card">
+                <img src="cert1.jpg" alt="BBIT Degree">
+                <h4>Bachelor of Business Information Technology (BBIT)</h4>
+                <p>Jomo Kenyatta University of Agriculture and Technology</p>
             </div>
-            <div class="philosophy-quotes">
-                <ul style="list-style: none;">
-                    <li style="margin-bottom: 10px;">✅ <strong>Student-Centric</strong> learning</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>Practical</strong> problem solving</li>
-                    <li>✅ <strong>Future-Ready</strong> skillsets</li>
-                </ul>
+            <div class="cert-card">
+                <img src="cert2.jpg" alt="High School">
+                <h4>High School Academic Background</h4>
+                <p>Secondary Education & Foundation Studies</p>
+            </div>
+            <div class="cert-card">
+                <img src="cert3.jpg" alt="Ecommerce Cert">
+                <h4>Ecommerce Web Design & Entrepreneurship</h4>
+                <p>Professional Development Certification</p>
             </div>
         </div>
     </div>
@@ -268,70 +182,18 @@
         <h2>Expertise & Skills</h2>
         <div class="skill-grid">
             <div class="skill-tag">Pearson Edexcel ICT</div>
-            <div class="skill-tag">Coding (Python & Scratch)</div>
-            <div class="skill-tag">Web Development (HTML/CSS/JS)</div>
-            <div class="skill-tag">Google Classroom Mastery</div>
+            <div class="skill-tag">Coding (Python)</div>
+            <div class="skill-tag">Web Dev (HTML/CSS/JS)</div>
+            <div class="skill-tag">Google Classroom</div>
             <div class="skill-tag">Database Management</div>
-            <div class="skill-tag">Graphic Design (Canva/PS)</div>
-            <div class="skill-tag">Cyber Security Basics</div>
-            <div class="skill-tag">Cloud Infrastructure</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Academic & Professional Credentials</h2>
-        <div class="credential-grid">
-            <div class="cert-card">
-                <img src="cert1.jpg" alt="Degree">
-                <h4>Bachelor of Business Information Technology</h4>
-                <p>JKUAT University</p>
-            </div>
-            <div class="cert-card">
-                <img src="cert2.jpg" alt="Web Cert">
-                <h4>Professional Certificate in Full-Stack Web Development</h4>
-                <p>Specialized Technical Training</p>
-            </div>
-            <div class="cert-card">
-                <img src="cert3.jpg" alt="Digital Cert">
-                <h4>Advanced Certification: Digital Strategy & SEO</h4>
-                <p>Industry Professional Standard</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Active ICT Projects</h2>
-        <ul class="list-grid">
-            <li>Digital Learning Platform Setup</li>
-            <li>ICT Resource Repository</li>
-            <li>Advanced Spreadsheet Analysis</li>
-            <li>Student Coding Bootcamps</li>
-            <li>LMS Optimization Projects</li>
-            <li>Digital Presentation Series</li>
-            <li>ICT Digital Club Leadership</li>
-            <li>School Web Infrastructure</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Impact & Feedback</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p>"Fahadh is a dedicated professional who makes complex technical subjects easy for students to grasp."</p>
-                <span>- School Administrator</span>
-            </div>
-            <div class="testimonial-card">
-                <p>"A leader in implementing digital learning standards across the department."</p>
-                <span>- Senior Teacher</span>
-            </div>
+            <div class="skill-tag">Cyber Security</div>
         </div>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh</p>
-    <p style="opacity: 0.5; font-size: 0.7rem; margin-top: 10px;">Excellence in ICT Education</p>
+    <p>© 2026 Teacher Fahadh | Excellence in ICT Education</p>
 </footer>
 
 </body>
