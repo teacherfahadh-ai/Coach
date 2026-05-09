@@ -64,7 +64,6 @@
             text-transform: uppercase;
         }
 
-        /* --- Headline Immediately Below Nav --- */
         .main-headline {
             background: linear-gradient(to right, #ffffff, #f0f4f8, #ffffff);
             padding: 40px 20px;
@@ -116,12 +115,27 @@
             padding-left: 20px;
         }
 
+        /* --- Testimonial Section --- */
+        .social-proof {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        .social-proof i.quote-icon {
+            font-size: 2rem; color: var(--secondary); opacity: 0.3;
+            position: absolute; top: 20px; left: 20px;
+        }
+        .proof-text { font-style: italic; color: var(--text-main); font-size: 1.1rem; padding: 0 30px; }
+        .proof-author { display: block; margin-top: 15px; font-weight: 800; color: var(--primary); text-align: right; }
+
         .skill-item { margin-bottom: 20px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 700; color: var(--primary); font-size: 0.9rem; }
         .progress-bg { background: #e2e8f0; height: 10px; border-radius: 5px; overflow: hidden; }
         .progress-fill { background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; border-radius: 5px; }
 
-        /* --- 30 Day Plan Roadmap --- */
         .plan-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -145,25 +159,44 @@
             font-weight: 900; margin-bottom: 15px;
         }
 
-        /* --- Why Hire Me Cards --- */
-        .course-grid {
+        /* --- Standout Why Hire Me --- */
+        .standout-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin: 40px 0;
         }
 
-        .course-card {
-            padding: 35px;
+        .standout-card {
+            padding: 40px;
             background: var(--white);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid #eee;
+            border-top: 5px solid var(--primary);
             transition: 0.4s;
         }
-        .course-card:hover { transform: translateY(-8px); border-color: var(--secondary); }
-        .course-card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 20px; }
-        .course-card h4 { color: var(--primary); margin-bottom: 15px; }
+        .standout-card:hover { transform: translateY(-10px); border-top-color: var(--secondary); }
+        .standout-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        .standout-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
         .cta-box {
             background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -192,6 +225,10 @@
     </style>
 </head>
 <body>
+
+<a href="https://wa.me/252636710907" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <header>
     <img src="profile.jpg" alt="Teacher Fahadh">
@@ -222,10 +259,17 @@
         <h2 class="section-title">Educational Narrative</h2>
         <div class="narrative">
             <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
-                I am a passionate <strong>Senior ICT Educator</strong> dedicated to fostering high-level digital literacy and academic excellence. With over eight years in the classroom, I specialize in the <strong>Pearson Edexcel Curriculum</strong>, guiding students and professionals through the complexities of modern technology with a focus on measurable success.
+                I am a <strong>Senior ICT Educator</strong> dedicated to fostering high-level digital literacy and academic excellence. With over eight years in the classroom, I specialize in the <strong>Pearson Edexcel Curriculum</strong>, guiding students and professionals through the complexities of modern technology with a focus on measurable success.
             </p>
+
+            <div class="social-proof">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="proof-text">"Teacher Fahadh doesn't just teach theory; he builds environments where students can actually perform. His implementation of our library system changed how we operate."</p>
+                <span class="proof-author">— Department Lead, Elm High School</span>
+            </div>
+
             <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
-                My track record includes successfully implementing a digital Library Management System that achieved an <strong>89% adoption rate</strong>. Beyond instruction, I ensure that school ICT laboratories are maintained at a 100% operational standard, ensuring a stable environment for building real-world tech skills.
+                My track record includes successfully implementing a digital Library Management System that achieved an <strong>89% adoption rate</strong>. I ensure that ICT laboratories remain at a 100% operational standard, providing a stable environment for building real-world tech skills.
             </p>
         </div>
 
@@ -270,22 +314,22 @@
         </div>
     </div>
 
-    <h2 class="section-title">Why Schools Hire Me</h2>
-    <div class="course-grid">
-        <div class="course-card">
-            <i class="fa-solid fa-award"></i>
-            <h4>Exam Excellence</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">Proven success delivering high-grade results in international ICT examinations.</p>
+    <h2 class="section-title">Why Hire Me</h2>
+    <div class="standout-grid">
+        <div class="standout-card">
+            <i class="fa-solid fa-bullseye"></i>
+            <h4>Proven ROI</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">I achieve high adoption rates and grade outcomes. My focus is always on measurable results and system efficiency.</p>
         </div>
-        <div class="course-card">
-            <i class="fa-solid fa-microchip"></i>
-            <h4>Technical Reliability</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">Expertise in managing hardware and server uptime alongside classroom duties.</p>
+        <div class="standout-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h4>Dual-Threat Skillset</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">I am both an educator and a technician. You get classroom leadership and laboratory maintenance in one professional package.</p>
         </div>
-        <div class="course-card">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <h4>Practical Skills</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">Moving beyond theory to build practical, career-ready tech proficiency.</p>
+        <div class="standout-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h4>Future-Ready Training</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">I bridge the gap between academic theory and the tech industry, preparing students for real-world careers, not just exams.</p>
         </div>
     </div>
 
@@ -294,7 +338,7 @@
         <p style="opacity: 0.9; margin-bottom: 25px;">Available for Senior ICT Teaching and Academic Leadership roles.</p>
         <div class="btn-group">
             <a href="cv.pdf" class="btn btn-white"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
-            <a href="contact.html" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Request Interview</a>
+            <a href="https://wa.me/252636710907" class="btn btn-gold"><i class="fa-solid fa-whatsapp"></i> WhatsApp Me</a>
         </div>
     </div>
 
