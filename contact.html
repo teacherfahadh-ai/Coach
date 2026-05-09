@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #002147; /* Academic Deep Navy */
-            --secondary: #d4af37; /* Professional Gold Accent */
+            --primary: #002147; 
+            --secondary: #d4af37; 
             --accent: #0056b3;
-            --bg: #f5f7fa;
+            --bg: #f4f7f6;
             --white: #ffffff;
             --text-main: #1a1a1a;
             --text-muted: #535c68;
@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* --- Elegant Header --- */
+        /* --- Header --- */
         header {
             background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
@@ -50,55 +50,76 @@
         header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
         header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
 
-        /* --- Navigation --- */
-        nav {
+        /* --- SEPARATED NAVIGATION BLOCK --- */
+        .nav-container {
             background: var(--white);
-            padding: 18px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            text-align: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
 
         nav a {
             color: var(--primary);
             text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 6px;
         }
 
-        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
+        nav a:hover { 
+            background: var(--primary);
+            color: var(--white);
+        }
 
-        /* --- Content Container --- */
+        /* --- CONTENT CONTAINER --- */
         .container {
             max-width: 1000px;
-            margin: -40px auto 60px;
+            margin: 0 auto 60px;
             padding: 0 20px;
         }
 
-        .section {
+        /* --- SEPARATED CONTACT BLOCK --- */
+        .contact-block {
             background: var(--white);
-            padding: 45px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-top: 5px solid var(--secondary);
+        }
+
+        .contact-header {
+            background: #f9f9f9;
+            padding: 30px 45px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .contact-body {
+            padding: 45px;
         }
 
         h2.contact-title {
             color: var(--primary);
             font-size: 1.8rem;
-            margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 800;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
-            display: inline-block;
         }
 
         /* --- Contact Info Grid --- */
@@ -110,7 +131,7 @@
         }
 
         .contact-card {
-            background: #f9fbff;
+            background: #ffffff;
             padding: 25px;
             border-radius: 10px;
             text-align: center;
@@ -118,7 +139,11 @@
             transition: 0.3s;
         }
 
-        .contact-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .contact-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
 
         .contact-card i { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: block; }
         .contact-card h4 { color: var(--primary); margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; }
@@ -126,49 +151,67 @@
 
         /* --- Reference Section --- */
         .reference-box {
-            background: #fdfaf0; /* Subtle Gold tint */
-            padding: 30px;
+            background: #fdfaf0; 
+            padding: 35px;
             border-radius: var(--radius);
-            border-left: 5px solid var(--secondary);
+            border-left: 6px solid var(--secondary);
             margin-top: 20px;
         }
 
-        .reference-box h3 { color: var(--primary); margin-bottom: 5px; }
-        .reference-box .role { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; display: block; }
-        .reference-box p { margin-bottom: 8px; color: var(--text-main); }
-        .reference-box i { width: 25px; color: var(--secondary); }
+        .reference-box h3 { color: var(--primary); margin-bottom: 5px; font-size: 1.4rem; }
+        .reference-box .role { color: var(--text-muted); font-size: 0.95rem; font-weight: 700; margin-bottom: 15px; display: block; text-transform: uppercase; }
+        .reference-box p { margin-bottom: 10px; color: var(--text-main); display: flex; align-items: center; gap: 10px; }
+        .reference-box i { color: var(--secondary); font-size: 1.1rem; }
 
-        /* --- Hire Me Buttons --- */
+        /* --- CTA / Hire Me Box --- */
         .hire-me-box {
             text-align: center;
-            padding: 40px;
+            padding: 60px 40px;
             background: var(--primary);
             color: white;
             border-radius: var(--radius);
-            margin-top: 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hire-me-box h3 { font-size: 1.5rem; margin-bottom: 25px; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .hire-me-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+        }
+
+        .hire-me-box h3 { font-size: 1.8rem; margin-bottom: 30px; color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; position: relative; }
 
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
+            position: relative;
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 18px 35px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: 0.3s;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
 
         .btn-gold { background-color: var(--secondary); color: var(--primary); }
         .btn-gold:hover { background-color: white; transform: translateY(-3px); }
@@ -181,7 +224,8 @@
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            margin-top: 80px;
         }
 
         .footer-links { margin-bottom: 30px; }
@@ -189,7 +233,7 @@
             color: var(--white);
             text-decoration: none;
             margin: 0 15px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             opacity: 0.7;
@@ -200,8 +244,9 @@
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
-            .section { padding: 30px; }
-            .footer-links a { display: block; margin: 10px 0; }
+            .contact-body { padding: 30px; }
+            nav { flex-direction: column; align-items: center; gap: 10px; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -213,50 +258,64 @@
     <p>Professional ICT Consultation & Education</p>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="contact.html">Contact</a>
-</nav>
+<!-- SEPARATED NAVIGATION -->
+<div class="nav-container">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
 
 <div class="container">
-    <div class="section">
-        <h2 class="contact-title">Contact Information</h2>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <i class="fa-solid fa-envelope"></i>
-                <h4>Email Me</h4>
-                <p>teacherfahadh@gmail.com</p>
-            </div>
-            <div class="contact-card">
-                <i class="fa-solid fa-phone"></i>
-                <h4>Call Me</h4>
-                <p>+252 636 710 907</p>
-            </div>
-            <div class="contact-card">
-                <i class="fa-solid fa-location-dot"></i>
-                <h4>Location</h4>
-                <p>Hargeisa, Somaliland</p>
-            </div>
+    <!-- SEPARATED CONTACT INFORMATION -->
+    <div class="contact-block">
+        <div class="contact-header">
+            <h2 class="contact-title">Contact Information</h2>
         </div>
+        <div class="contact-body">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email Me</h4>
+                    <p>teacherfahadh@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Call Me</h4>
+                    <p>+252 636 710 907</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Location</h4>
+                    <p>Hargeisa, Somaliland</p>
+                </div>
+            </div>
 
-        <div class="btn-group" style="justify-content: center; margin-top: 20px;">
-            <a href="cv.pdf" class="btn" style="border: 2px solid var(--primary); color: var(--primary);"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
-            <a href="coverpage.pdf" class="btn" style="border: 2px solid var(--primary); color: var(--primary);"><i class="fa-solid fa-file-lines"></i> Cover Letter</a>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="contact-title">References</h2>
-        <div class="reference-box">
-            <h3>Mr. Awale Adam</h3>
-            <span class="role">Administrator, Elm High School</span>
-            <p><i class="fa-solid fa-phone"></i> +252 634 763 674</p>
-            <p><i class="fa-solid fa-envelope"></i> adan76ers@yahoo.com</p>
+            <div class="btn-group">
+                <a href="cv.pdf" class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
+                <a href="coverpage.pdf" class="btn btn-outline"><i class="fa-solid fa-file-lines"></i> Cover Letter</a>
+            </div>
         </div>
     </div>
 
+    <!-- SEPARATED REFERENCES -->
+    <div class="contact-block">
+        <div class="contact-header">
+            <h2 class="contact-title">References</h2>
+        </div>
+        <div class="contact-body">
+            <div class="reference-box">
+                <h3>Mr. Awale Adam</h3>
+                <span class="role">Administrator, Elm High School</span>
+                <p><i class="fa-solid fa-phone"></i> +252 634 763 674</p>
+                <p><i class="fa-solid fa-envelope"></i> adan76ers@yahoo.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA / HIRE ME BLOCK -->
     <div class="hire-me-box">
         <h3>Available for ICT Teaching Roles</h3>
         <div class="btn-group">
@@ -277,7 +336,9 @@
         <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
     </div>
-    <p>© 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
+    <div class="footer-bottom">
+        <p>© 2026 Teacher Fahadh | Advancing Digital Literacy in Somaliland</p>
+    </div>
 </footer>
 
 </body>
