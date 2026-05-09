@@ -77,6 +77,7 @@
 
         .container { max-width: 1100px; margin: 40px auto 80px; padding: 0 20px; }
 
+        /* STAT BAR */
         .stat-bar {
             background: var(--white);
             padding: 40px 20px;
@@ -92,34 +93,11 @@
             border-bottom: 4px solid var(--secondary);
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 10px;
-            border-right: 1px solid #eee;
-        }
+        .stat-item { text-align: center; border-right: 1px solid #eee; }
         .stat-item:last-child { border-right: none; }
-
-        .stat-item h3 { 
-            font-size: 2.5rem; 
-            color: var(--primary); 
-            font-weight: 800;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary); font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .grade-highlight { color: var(--accent); }
-        
-        .stat-item span { 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            color: var(--text-muted); 
-            font-weight: 700; 
-            display: block;
-        }
+        .stat-item span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 700; }
 
         .section {
             background: var(--white);
@@ -138,6 +116,27 @@
             padding-left: 20px;
         }
 
+        /* NEW REDESIGNED WHY HIRE ME */
+        .why-hire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .why-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: #fcfcfc;
+            border: 1px solid #edf2f7;
+            transition: 0.3s;
+            display: flex;
+            gap: 20px;
+        }
+        .why-card:hover { border-color: var(--secondary); transform: translateY(-5px); background: #fff; }
+        .why-card i { font-size: 1.8rem; color: var(--secondary); margin-top: 5px; }
+        .why-card h4 { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; font-weight: 800; }
+        .why-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* NARRATIVE & SKILLS */
         .social-proof {
             background: #fffdf5;
             border-radius: 12px;
@@ -153,119 +152,41 @@
         .progress-bg { background: #e2e8f0; height: 10px; border-radius: 5px; overflow: hidden; }
         .progress-fill { background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; border-radius: 5px; }
 
-        .standout-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .standout-card {
-            padding: 40px;
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border-top: 5px solid var(--primary);
-            transition: 0.4s;
-        }
-        .standout-card:hover { transform: translateY(-10px); border-top-color: var(--secondary); }
-        .standout-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
-        .standout-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            width: 60px; height: 60px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 9999;
-            text-decoration: none;
-        }
-
-        /* IMPROVED CTA BOX */
+        /* CTA BOX AT BOTTOM */
         .cta-box {
             background: linear-gradient(145deg, #002147 0%, #003366 50%, #0056b3 100%);
             color: white;
-            padding: 80px 40px;
+            padding: 70px 40px;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: 0 25px 60px rgba(0, 33, 71, 0.25);
-            position: relative;
-            overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
         }
+        .cta-box h2 { font-size: 2.3rem; font-weight: 800; margin-bottom: 15px; }
+        .cta-box p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 35px; }
 
-        .cta-box::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-box h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-box p {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
-
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn {
-            padding: 18px 32px;
+            padding: 16px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            display: inline-flex; align-items: center; gap: 10px;
             font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.3s;
         }
+        .btn-white { background: var(--white); color: var(--primary); }
+        .btn-gold { background: var(--secondary); color: var(--primary); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .btn-white {
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        .btn-gold {
-            background: var(--secondary);
-            color: var(--primary);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25d366; color: #FFF;
+            border-radius: 50px; width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; z-index: 9999; text-decoration: none;
         }
 
         footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
@@ -276,8 +197,6 @@
             .stat-item { border-right: none; border-bottom: 1px solid #eee; }
             header h1 { font-size: 2.2rem; }
             header h2 { font-size: 1.5rem; }
-            .cta-box { padding: 60px 20px; }
-            .cta-box h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -323,6 +242,33 @@
     </div>
 
     <div class="section">
+        <h2 class="section-title">Why Hire Me</h2>
+        <div class="why-hire-grid">
+            <div class="why-card">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <div>
+                    <h4>Quick Deployment</h4>
+                    <p>Ready for immediate integration into your academic department with zero technical onboarding required.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <div>
+                    <h4>Proven Results</h4>
+                    <p>Consistent history of guiding students to high achievement and 89% digital systems adoption.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-microchip"></i>
+                <div>
+                    <h4>Integrated Mastery</h4>
+                    <p>Unique capability to manage both the teaching curriculum and the complex technical infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <h2 class="section-title">Educational Narrative</h2>
         <div class="narrative">
             <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
@@ -349,27 +295,6 @@
         <div class="skill-item">
             <div class="skill-info"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
             <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
-        </div>
-    </div>
-
-    <div class="section" style="background: transparent; box-shadow: none; padding: 0;">
-        <h2 class="section-title">Why Hire Me</h2>
-        <div class="standout-grid">
-            <div class="standout-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h4>Quick Deployment</h4>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">Ready for immediate integration into your academic department. I require zero technical onboarding to manage ICT labs or Edexcel curriculum delivery.</p>
-            </div>
-            <div class="standout-card">
-                <i class="fa-solid fa-bullseye"></i>
-                <h4>Proven Results</h4>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">A consistent history of guiding students to high achievement in international ICT qualifications and achieving 89% adoption rates in digital systems.</p>
-            </div>
-            <div class="standout-card">
-                <i class="fa-solid fa-layer-group"></i>
-                <h4>Integrated Mastery</h4>
-                <p style="font-size: 0.95rem; color: var(--text-muted);">I manage both the teaching and the technology, ensuring zero downtime in learning labs and professional-grade infrastructure maintenance.</p>
-            </div>
         </div>
     </div>
 
