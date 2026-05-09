@@ -86,7 +86,28 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             margin-bottom: 35px;
-            transition: transform 0.3s;
+        }
+
+        /* --- Teaching Philosophy Highlighting --- */
+        .philosophy-card {
+            border: 2px solid var(--secondary);
+            background: linear-gradient(to right, #ffffff, #fffdfa);
+        }
+
+        .philosophy-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .philosophy-text { flex: 2; }
+        .philosophy-quotes {
+            flex: 1;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            border-left: 5px solid var(--secondary);
         }
 
         h2 {
@@ -156,21 +177,26 @@
 
         .cert-card {
             border: 1px solid #eee;
-            padding: 12px;
+            padding: 15px;
             border-radius: var(--radius);
             text-align: center;
             transition: 0.4s;
+            background: #fff;
         }
 
         .cert-card:hover { border-color: var(--secondary); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
         .cert-card img {
             width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #fdfdfd;
             border-radius: 6px;
             margin-bottom: 15px;
         }
 
-        .cert-card p { font-weight: 700; font-size: 0.9rem; color: var(--primary); }
+        .cert-card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 5px; }
+        .cert-card p { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; }
 
         /* --- Testimonials --- */
         .testimonial-grid {
@@ -200,6 +226,7 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             .section { padding: 25px; }
+            .philosophy-content { flex-direction: column; }
         }
     </style>
 </head>
@@ -220,9 +247,21 @@
 
 <div class="container">
 
-    <div class="section">
+    <div class="section philosophy-card">
         <h2>Teaching Philosophy</h2>
-        <p>I believe that technology is the cornerstone of modern education. My approach focuses on bridging the gap between theoretical knowledge and practical application, ensuring students are not just computer literate, but digital innovators. As an <strong>ICT Teacher</strong>, I am dedicated to fostering environments that encourage curiosity, ethical digital citizenship, and technical mastery.</p>
+        <div class="philosophy-content">
+            <div class="philosophy-text">
+                <p>I believe technology is not just a subject, but the cornerstone of modern problem-solving. My pedagogical approach bridges the gap between <strong>theoretical logic</strong> and <strong>hands-on technical application</strong>.</p>
+                <p style="margin-top: 15px;">I strive to transform students from passive consumers of technology into proactive digital innovators who prioritize ethical citizenship and technical mastery.</p>
+            </div>
+            <div class="philosophy-quotes">
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 10px;">✅ <strong>Student-Centric</strong> learning</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>Practical</strong> problem solving</li>
+                    <li>✅ <strong>Future-Ready</strong> skillsets</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="section">
@@ -240,6 +279,27 @@
     </div>
 
     <div class="section">
+        <h2>Academic & Professional Credentials</h2>
+        <div class="credential-grid">
+            <div class="cert-card">
+                <img src="cert1.jpg" alt="Degree">
+                <h4>Bachelor of Business Information Technology</h4>
+                <p>JKUAT University</p>
+            </div>
+            <div class="cert-card">
+                <img src="cert2.jpg" alt="Web Cert">
+                <h4>Professional Certificate in Full-Stack Web Development</h4>
+                <p>Specialized Technical Training</p>
+            </div>
+            <div class="cert-card">
+                <img src="cert3.jpg" alt="Digital Cert">
+                <h4>Advanced Certification: Digital Strategy & SEO</h4>
+                <p>Industry Professional Standard</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Active ICT Projects</h2>
         <ul class="list-grid">
             <li>Digital Learning Platform Setup</li>
@@ -251,33 +311,6 @@
             <li>ICT Digital Club Leadership</li>
             <li>School Web Infrastructure</li>
         </ul>
-    </div>
-
-    <div class="section">
-        <h2>Professional Certifications</h2>
-        <ul class="list-grid">
-            <li>ICT Teaching Certification</li>
-            <li>Advanced Digital Skills Specialist</li>
-            <li>Educational Technology Leadership</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Academic Credentials</h2>
-        <div class="credential-grid">
-            <div class="cert-card">
-                <img src="cert1.jpg" alt="Degree">
-                <p>Bachelor of Business IT (JKUAT)</p>
-            </div>
-            <div class="cert-card">
-                <img src="cert2.jpg" alt="Web Cert">
-                <p>E-commerce & Web Development</p>
-            </div>
-            <div class="cert-card">
-                <img src="cert3.jpg" alt="Digital Cert">
-                <p>Digital Marketing & SEO Strategy</p>
-            </div>
-        </div>
     </div>
 
     <div class="section">
