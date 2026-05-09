@@ -65,38 +65,42 @@
         }
 
         .main-headline {
-            background: linear-gradient(to right, #ffffff, #f0f4f8, #ffffff);
-            padding: 40px 20px;
+            background: var(--primary);
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 5px solid var(--secondary);
         }
 
         .main-headline h2 {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            color: var(--primary);
-            font-size: 1.8rem;
+            color: var(--white);
+            font-size: 2.2rem;
             font-weight: 800;
-            line-height: 1.3;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .container { max-width: 1100px; margin: 40px auto 80px; padding: 0 20px; }
 
         .stat-bar {
-            background: var(--primary);
-            color: white;
+            background: var(--white);
+            color: var(--primary);
             padding: 40px;
             border-radius: var(--radius);
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
-            box-shadow: 0 20px 40px rgba(0,33,71,0.2);
+            box-shadow: var(--shadow);
+            margin-top: -50px;
             margin-bottom: 40px;
+            position: relative;
+            z-index: 5;
         }
 
-        .stat-item h3 { font-size: 2.5rem; color: var(--secondary); font-weight: 800; }
-        .stat-item span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); font-weight: 800; }
+        .stat-item span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; }
 
         .section {
             background: var(--white);
@@ -115,51 +119,22 @@
             padding-left: 20px;
         }
 
-        /* --- Testimonial Section --- */
         .social-proof {
-            background: #f8fafc;
+            background: #fffdf5;
             border-radius: 12px;
-            padding: 30px;
+            padding: 35px;
             margin: 30px 0;
-            border: 1px solid #e2e8f0;
+            border: 2px dashed var(--secondary);
             position: relative;
         }
-        .social-proof i.quote-icon {
-            font-size: 2rem; color: var(--secondary); opacity: 0.3;
-            position: absolute; top: 20px; left: 20px;
-        }
-        .proof-text { font-style: italic; color: var(--text-main); font-size: 1.1rem; padding: 0 30px; }
-        .proof-author { display: block; margin-top: 15px; font-weight: 800; color: var(--primary); text-align: right; }
+        .proof-text { font-style: italic; color: var(--text-main); font-size: 1.15rem; font-weight: 500; }
+        .proof-author { display: block; margin-top: 15px; font-weight: 800; color: var(--primary); text-transform: uppercase; font-size: 0.85rem; }
 
         .skill-item { margin-bottom: 20px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 700; color: var(--primary); font-size: 0.9rem; }
         .progress-bg { background: #e2e8f0; height: 10px; border-radius: 5px; overflow: hidden; }
         .progress-fill { background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; border-radius: 5px; }
 
-        .plan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .plan-step {
-            background: #fffdf5;
-            border: 1px solid #f0e6cc;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .step-num {
-            background: var(--secondary);
-            color: var(--primary);
-            width: 35px; height: 35px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 900; margin-bottom: 15px;
-        }
-
-        /* --- Standout Why Hire Me --- */
         .standout-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -179,7 +154,6 @@
         .standout-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
         .standout-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
 
-        /* --- WhatsApp Floating Button --- */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -196,7 +170,6 @@
             text-decoration: none;
             transition: 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
         .cta-box {
             background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -207,13 +180,14 @@
         }
 
         .btn {
-            padding: 16px 35px;
+            padding: 16px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             text-transform: uppercase;
             display: inline-flex; align-items: center; gap: 12px;
             margin: 10px;
+            font-size: 0.85rem;
         }
         .btn-white { background: var(--white); color: var(--primary); }
         .btn-gold { background: var(--secondary); color: var(--primary); }
@@ -221,7 +195,6 @@
         footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
         footer .footer-nav { margin-bottom: 20px; }
         footer .footer-nav a { color: #cbd5e1; text-decoration: none; margin: 0 15px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; }
-        footer .footer-nav a:hover { color: var(--secondary); }
     </style>
 </head>
 <body>
@@ -250,95 +223,67 @@
 <div class="container">
     
     <div class="stat-bar">
-        <div class="stat-item"><h3>89%</h3><span>Digital Adoption</span></div>
-        <div class="stat-item"><h3>8+ Yrs</h3><span>Classroom Experience</span></div>
-        <div class="stat-item"><h3>100%</h3><span>Deployment Ready</span></div>
+        <div class="stat-item"><h3>A* - B</h3><span>Exam Target</span></div>
+        <div class="stat-item"><h3>8+ Yrs</h3><span>Experience</span></div>
+        <div class="stat-item"><h3>100%</h3><span>Lab Readiness</span></div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Why Hire Me</h2>
+        <div class="standout-grid">
+            <div class="standout-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h4>Quick Deployment</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">Ready for immediate integration into your academic department. I require zero technical onboarding to manage ICT labs or Edexcel curriculum delivery.</p>
+            </div>
+            <div class="standout-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h4>Proven Results</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">A consistent history of guiding students to high achievement in international ICT qualifications and achieving 89% adoption rates in digital systems.</p>
+            </div>
+            <div class="standout-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h4>Integrated Mastery</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">I manage both the teaching and the technology, ensuring zero downtime in learning labs and professional-grade infrastructure maintenance.</p>
+            </div>
+        </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">Educational Narrative</h2>
         <div class="narrative">
             <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
-                I am a <strong>Senior ICT Educator</strong> dedicated to fostering high-level digital literacy and academic excellence. With over eight years in the classroom, I specialize in the <strong>Pearson Edexcel Curriculum</strong>, guiding students and professionals through the complexities of modern technology with a focus on measurable success.
+                I am a <strong>Senior ICT Educator</strong> specializing in the <strong>Pearson Edexcel Curriculum</strong>. I empower students and professionals by bridging the gap between academic theory and real-world technology application. My approach focuses on delivering consistent academic excellence and equipping learners with high-demand digital proficiencies.
             </p>
 
             <div class="social-proof">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p class="proof-text">"Teacher Fahadh doesn't just teach theory; he builds environments where students can actually perform. His implementation of our library system changed how we operate."</p>
-                <span class="proof-author">— Department Lead, Elm High School</span>
+                <p class="proof-text">"Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance. His students don't just pass exams; they develop a deep, practical understanding of modern technology."</p>
+                <span class="proof-author">— Senior Academic Leadership</span>
             </div>
-
-            <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
-                My track record includes successfully implementing a digital Library Management System that achieved an <strong>89% adoption rate</strong>. I ensure that ICT laboratories remain at a 100% operational standard, providing a stable environment for building real-world tech skills.
-            </p>
         </div>
 
         <h3 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase;">Technical Competency</h3>
         <div class="skill-item">
-            <div class="skill-info"><span>Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
+            <div class="skill-info"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
             <div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div>
         </div>
         <div class="skill-item">
-            <div class="skill-info"><span>ICT Lab & Infrastructure</span><span>95%</span></div>
+            <div class="skill-info"><span>ICT Lab & Network Management</span><span>95%</span></div>
             <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
         </div>
         <div class="skill-item">
-            <div class="skill-info"><span>Digital Learning Systems (LMS)</span><span>90%</span></div>
+            <div class="skill-info"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
             <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
-        </div>
-
-        <h4 style="margin-top: 50px; color: var(--primary); text-transform: uppercase; font-weight: 800;">
-            <i class="fa-solid fa-bolt" style="color: var(--secondary);"></i> 30-Day Integration Roadmap
-        </h4>
-        <div class="plan-grid">
-            <div class="plan-step">
-                <div class="step-num">01</div>
-                <h5>Audit & Align</h5>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">Full health check of ICT hardware and curriculum planning.</p>
-            </div>
-            <div class="plan-step">
-                <div class="step-num">02</div>
-                <h5>LMS Launch</h5>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">Establishing digital workflows for students and staff.</p>
-            </div>
-            <div class="plan-step">
-                <div class="step-num">03</div>
-                <h5>Safety First</h5>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">Digital safety briefings and ethical tech training.</p>
-            </div>
-            <div class="plan-step">
-                <div class="step-num">04</div>
-                <h5>Full Scale</h5>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">High-engagement lesson delivery and lab optimization.</p>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="section-title">Why Hire Me</h2>
-    <div class="standout-grid">
-        <div class="standout-card">
-            <i class="fa-solid fa-bullseye"></i>
-            <h4>Proven ROI</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">I achieve high adoption rates and grade outcomes. My focus is always on measurable results and system efficiency.</p>
-        </div>
-        <div class="standout-card">
-            <i class="fa-solid fa-layer-group"></i>
-            <h4>Dual-Threat Skillset</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">I am both an educator and a technician. You get classroom leadership and laboratory maintenance in one professional package.</p>
-        </div>
-        <div class="standout-card">
-            <i class="fa-solid fa-rocket"></i>
-            <h4>Future-Ready Training</h4>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">I bridge the gap between academic theory and the tech industry, preparing students for real-world careers, not just exams.</p>
         </div>
     </div>
 
     <div class="cta-box">
-        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Secure Your ICT Department</h2>
-        <p style="opacity: 0.9; margin-bottom: 25px;">Available for Senior ICT Teaching and Academic Leadership roles.</p>
+        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Ready for Quick Deployment</h2>
+        <p style="opacity: 0.9; margin-bottom: 25px;">Available for immediate Senior ICT Teaching and Academic Leadership roles.</p>
         <div class="btn-group">
-            <a href="cv.pdf" class="btn btn-white"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
-            <a href="https://wa.me/252636710907" class="btn btn-gold"><i class="fa-solid fa-whatsapp"></i> WhatsApp Me</a>
+            <a href="cv.pdf" class="btn btn-white"><i class="fa-solid fa-file-pdf"></i> View CV</a>
+            <a href="coverletter.pdf" class="btn btn-white"><i class="fa-solid fa-envelope-open-text"></i> Cover Letter</a>
+            <a href="contact.html" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Request Interview</a>
         </div>
     </div>
 
@@ -351,7 +296,7 @@
         <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
     </div>
-    <p>© 2026 Teacher Fahadh | Excellence in Global ICT Education</p>
+    <p>© 2026 Teacher Fahadh | Excellence in ICT Education</p>
 </footer>
 
 </body>
