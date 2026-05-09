@@ -49,7 +49,6 @@
         header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 5px; }
         header .title-tag { color: var(--secondary); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; display: block; }
         
-        /* Headline within Header */
         header h2 {
             max-width: 900px;
             margin: 0 auto;
@@ -188,26 +187,86 @@
             text-decoration: none;
         }
 
+        /* IMPROVED CTA BOX */
         .cta-box {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(145deg, #002147 0%, #003366 50%, #0056b3 100%);
             color: white;
-            padding: 60px;
+            padding: 80px 40px;
             border-radius: var(--radius);
             text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 33, 71, 0.25);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
-            padding: 16px 30px;
+            padding: 18px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             text-transform: uppercase;
-            display: inline-flex; align-items: center; gap: 12px;
-            margin: 10px;
-            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .btn-white { background: var(--white); color: var(--primary); }
-        .btn-gold { background: var(--secondary); color: var(--primary); }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-gold {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
 
         footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
         footer .footer-nav { margin-bottom: 20px; }
@@ -217,6 +276,8 @@
             .stat-item { border-right: none; border-bottom: 1px solid #eee; }
             header h1 { font-size: 2.2rem; }
             header h2 { font-size: 1.5rem; }
+            .cta-box { padding: 60px 20px; }
+            .cta-box h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -262,6 +323,36 @@
     </div>
 
     <div class="section">
+        <h2 class="section-title">Educational Narrative</h2>
+        <div class="narrative">
+            <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
+                I am a <strong>Senior ICT Educator</strong> specializing in the <strong>Pearson Edexcel Curriculum</strong>. I empower students and professionals by bridging the gap between academic theory and real-world technology application. My approach focuses on delivering consistent academic excellence and equipping learners with high-demand digital proficiencies.
+            </p>
+
+            <div class="social-proof">
+                <p class="proof-text">"Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance. His students don't just pass exams; they develop a deep, practical understanding of modern technology."</p>
+                <span class="proof-author">— Senior Academic Leadership</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Competency</h2>
+        <div class="skill-item">
+            <div class="skill-info"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-info"><span>ICT Lab & Network Management</span><span>95%</span></div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-info"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+        </div>
+    </div>
+
+    <div class="section" style="background: transparent; box-shadow: none; padding: 0;">
         <h2 class="section-title">Why Hire Me</h2>
         <div class="standout-grid">
             <div class="standout-card">
@@ -282,37 +373,9 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">Educational Narrative</h2>
-        <div class="narrative">
-            <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify;">
-                I am a <strong>Senior ICT Educator</strong> specializing in the <strong>Pearson Edexcel Curriculum</strong>. I empower students and professionals by bridging the gap between academic theory and real-world technology application. My approach focuses on delivering consistent academic excellence and equipping learners with high-demand digital proficiencies.
-            </p>
-
-            <div class="social-proof">
-                <p class="proof-text">"Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance. His students don't just pass exams; they develop a deep, practical understanding of modern technology."</p>
-                <span class="proof-author">— Senior Academic Leadership</span>
-            </div>
-        </div>
-
-        <h3 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase;">Technical Competency</h3>
-        <div class="skill-item">
-            <div class="skill-info"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-info"><span>ICT Lab & Network Management</span><span>95%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-info"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
-        </div>
-    </div>
-
     <div class="cta-box">
-        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Ready for Quick Deployment</h2>
-        <p style="opacity: 0.9; margin-bottom: 25px;">Available for immediate Senior ICT Teaching and Academic Leadership roles.</p>
+        <h2>Ready for Quick Deployment</h2>
+        <p>Available for immediate Senior ICT Teaching and Academic Leadership roles. Let's discuss how I can elevate your department's results.</p>
         <div class="btn-group">
             <a href="cv.pdf" class="btn btn-white"><i class="fa-solid fa-file-pdf"></i> View CV</a>
             <a href="coverletter.pdf" class="btn btn-white"><i class="fa-solid fa-envelope-open-text"></i> Cover Letter</a>
