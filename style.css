@@ -1,19 +1,21 @@
-/* style.css - DARK MINIMAL + GLASSMORPHISM HYBRID */
+/* style.css - SOMALILAND HERITAGE + GLASSMORPHISM HYBRID */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg: #050505;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --accent: #d4af37; /* Gold accent from original */
-    --accent-blue: #00d1ff; /* Glassmorphism glow */
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
+    --bg: #4d2b19;             /* Deep Earthy Brown from image */
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --accent: #c5a059;         /* Muted Gold for branding */
+    --accent-glow: #1a5e32;    /* Heritage Green for interactive glow */
+    --text-main: #fdfaf1;      /* Creamy White text */
+    --text-dim: #d1c7bc;       /* Muted Cream for secondary text */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     background-color: var(--bg);
+    background-image: radial-gradient(circle at top right, rgba(26, 94, 50, 0.15), transparent); /* Subtle Green Glow */
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
@@ -22,7 +24,7 @@ body {
 
 /* Glass Navigation */
 nav {
-    background: rgba(5, 5, 5, 0.8);
+    background: rgba(77, 43, 25, 0.85); /* Matches brown with transparency */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     position: sticky; top: 0; z-index: 1000;
@@ -42,33 +44,33 @@ nav a {
 
 nav a:hover, nav a.active {
     color: var(--text-main);
-    text-shadow: 0 0 10px var(--accent-blue);
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-/* Header - Minimalist Dark */
+/* Header - Heritage Focus */
 header {
     padding: 100px 20px 60px;
     text-align: center;
 }
 
 header img {
-    width: 120px; height: 120px;
+    width: 130px; height: 130px;
     border-radius: 50%;
-    border: 2px solid var(--accent);
-    margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    border: 3px solid var(--accent);
+    margin-bottom: 25px;
+    box-shadow: 0 0 40px rgba(26, 94, 50, 0.3); /* Green glow around profile */
 }
 
-header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; }
-.title-tag { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-weight: 600; font-size: 0.8rem; }
+header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+.title-tag { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-weight: 600; font-size: 0.85rem; }
 
-/* Sections */
+/* Glass Sections */
 .glass-section {
     background: var(--glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     padding: 50px;
     border-radius: 24px;
@@ -97,12 +99,12 @@ header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bott
 /* Skills & Tech Tags */
 .skill-item { margin-bottom: 25px; }
 .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-.progress-bg { background: rgba(255,255,255,0.05); height: 8px; border-radius: 10px; }
-.progress-fill { background: linear-gradient(90deg, var(--accent), var(--accent-blue)); height: 100%; border-radius: 10px; }
+.progress-bg { background: rgba(255,255,255,0.08); height: 8px; border-radius: 10px; }
+.progress-fill { background: linear-gradient(90deg, var(--accent), var(--accent-glow)); height: 100%; border-radius: 10px; }
 
 .tech-tag {
-    background: rgba(255,255,255,0.03);
-    color: var(--text-dim);
+    background: rgba(255,255,255,0.05);
+    color: var(--text-main);
     padding: 10px 18px;
     border-radius: 12px;
     font-size: 0.85rem;
@@ -123,25 +125,13 @@ header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bott
     text-align: center;
 }
 
-.stat-pill h3 { font-size: 2rem; color: var(--accent-blue); }
+.stat-pill h3 { font-size: 2rem; color: var(--accent); }
 .stat-pill span { font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
-
-/* Why Hire Boxes */
-.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.why-box {
-    padding: 30px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    transition: 0.3s;
-}
-.why-box:hover { border-color: var(--accent-blue); background: rgba(255,255,255,0.05); }
-.why-box i { font-size: 1.5rem; color: var(--accent); margin-bottom: 15px; display: block; }
 
 /* CTA Box */
 .cta-box {
-    background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);
-    border: 1px solid var(--accent);
+    background: linear-gradient(145deg, #4d2b19 0%, #3a2012 100%);
+    border: 2px solid var(--accent);
     padding: 60px;
     border-radius: 24px;
     text-align: center;
@@ -159,13 +149,13 @@ header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bott
     transition: 0.3s;
 }
 
-.btn-gold { background: var(--accent); color: #000; }
-.btn-outline { border: 1px solid var(--glass-border); color: #fff; }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+.btn-gold { background: var(--accent); color: #4d2b19; } /* Brown text on gold button */
+.btn-outline { border: 1px solid var(--text-main); color: var(--text-main); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; }
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
 @media (max-width: 768px) {
     .stat-bar { grid-template-columns: 1fr 1fr; gap: 20px; }
-    h1 { font-size: 2.2rem; }
+    header h1 { font-size: 2.2rem; }
 }
