@@ -1,174 +1,119 @@
-/* style.css - EDITORIAL HERITAGE (CSS ONLY INJECTED) */
+/* style.css - EDITORIAL OVERLAP STYLE */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --brand-dark: #1a0f08;      /* Deep Espresso for Header/Footer/Buttons */
-    --brand-accent: #a68546;    /* Heritage Gold */
-    --body-white: #ffffff;      /* Stark White Content */
-    --text-dark: #1a1a1a;       /* Black for Body text */
-    --text-light: #fdfaf1;      /* Cream for Header/Footer text */
+    --bg-dark: #1a0f08;         /* Rich espresso for branding */
+    --accent-gold: #a68546;     /* Heritage gold */
+    --sheet-white: #ffffff;      /* Content background */
+    --text-on-white: #1a1a1a;    /* High-readability black text */
+    --text-on-dark: #fdfaf1;     /* Cream for header/footer */
 }
 
-/* --- GLOBAL RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* --- MAIN BACKGROUND --- */
 body {
-    background-color: var(--brand-dark); 
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at top right, rgba(166, 133, 70, 0.1), transparent),
+        linear-gradient(180deg, #2a180e 0%, #1a0f08 100%);
+    background-attachment: fixed;
     font-family: 'Inter', sans-serif;
-    color: var(--text-dark); /* Default to dark for the content area */
-    display: flex;
-    flex-direction: column;
+    color: var(--text-on-dark);
 }
 
-/* --- HEADER AREA (STAYS DARK) --- */
+/* --- BRANDING: HEADER & NAV --- */
 header {
-    background: var(--brand-dark);
-    padding: 80px 20px 140px; /* Deep padding to "push" content down */
     text-align: center;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
+    padding: 80px 20px 140px; /* Deep padding to show the background */
+    color: var(--text-on-dark);
 }
 
 header img {
     width: 130px; height: 130px;
     border-radius: 50%;
-    border: 3px solid var(--brand-accent);
-    margin-bottom: 25px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-    background: linear-gradient(to bottom, #ffffff, var(--brand-accent));
+    font-size: 3rem;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to bottom, #ffffff, var(--accent-gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.title-tag {
-    color: var(--brand-accent);
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* --- THE WHITE SHEET TRICK --- */
-/* We turn the container/main area into the "White Sheet" */
-.container, .glass-section {
-    position: relative;
-    z-index: 10;
-}
-
-/* This is the magic part: It creates a white background that starts under the header */
-body::before {
-    content: "";
-    position: absolute;
-    top: 450px; /* Adjust this based on your header height */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--body-white);
-    border-radius: 60px 60px 0 0;
-    z-index: 0;
-    box-shadow: 0 -20px 50px rgba(0,0,0,0.2);
-}
-
-/* --- REFINED SECTIONS (ON WHITE) --- */
-.glass-section {
-    background: #fcfbf9;
-    border: 1px solid #f0efeb;
-    padding: 50px;
-    border-radius: 30px;
-    margin-bottom: 40px;
-    margin-top: -60px; /* This creates the overlap into the dark header */
-    color: var(--text-dark);
-}
-
-.section-title {
-    color: var(--brand-dark);
-    font-weight: 800;
-    border-bottom: 2px solid var(--brand-accent);
-    padding-bottom: 10px;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
-/* --- GRID BOXES --- */
-.why-box {
-    background: #ffffff;
-    border: 1px solid #eee;
-    padding: 35px;
-    border-radius: 20px;
-    color: var(--text-dark);
-    transition: 0.4s ease;
-}
-
-.why-box:hover {
-    transform: translateY(-8px);
-    border-color: var(--brand-accent);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-}
-
-/* --- BUTTONS (DARK MATCHING BRAND) --- */
-.btn-gold {
-    background: var(--brand-dark) !important;
-    color: var(--brand-accent) !important;
-    border: 2px solid var(--brand-accent) !important;
-    padding: 14px 30px;
-    border-radius: 12px;
-    font-weight: 700;
+nav a {
+    color: var(--text-on-dark);
     text-decoration: none;
-    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* --- THE WHITE SHEETS (MAIN CONTENT) --- */
+.container, .glass-section {
+    background-color: var(--sheet-white) !important;
+    color: var(--text-on-white) !important;
+    border: none !important;
+    backdrop-filter: none !important; /* Disabling glass to create the "Sheet" look */
+    border-radius: 30px;
+    padding: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* Forces all text inside white sections to be black */
+.glass-section h2, 
+.glass-section p, 
+.glass-section li, 
+.why-box h3, 
+.why-box p {
+    color: var(--text-on-white) !important;
+}
+
+.section-title::after {
+    background: var(--accent-gold) !important; /* Gold line on white */
+}
+
+/* --- GRID BOXES (WHITE ON WHITE) --- */
+.why-box {
+    background: #f9f9f7 !important; /* Very subtle off-white for depth */
+    border: 1px solid #eee !important;
+    border-radius: 20px;
+}
+
+/* --- BRANDING: BUTTONS (DARK) --- */
+.btn-gold {
+    background: var(--bg-dark) !important; /* Dark button body */
+    color: var(--accent-gold) !important;  /* Gold text */
+    border: 2px solid var(--accent-gold) !important;
+    text-transform: uppercase;
+    font-weight: 700;
     transition: 0.3s;
 }
 
 .btn-gold:hover {
-    background: var(--brand-accent) !important;
-    color: var(--brand-dark) !important;
+    background: var(--accent-gold) !important;
+    color: var(--bg-dark) !important;
+    box-shadow: 0 8px 20px rgba(166, 133, 70, 0.4);
 }
 
-.btn-outline {
-    border: 1px solid var(--brand-dark);
-    color: var(--brand-dark);
+/* --- BRANDING: FOOTER (DARK) --- */
+footer {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- NAVIGATION --- */
-nav {
-    background: transparent;
-    padding: 20px 0;
-}
-
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-}
-
-/* --- WHATSAPP FLOAT --- */
+/* Floating WhatsApp maintains its green */
 .whatsapp-float {
     background: #25d366;
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-}
-
-/* --- FOOTER FIX --- */
-/* We need to make sure the footer goes back to dark */
-footer {
-    background: var(--brand-dark);
-    color: var(--text-light);
-    padding: 80px 20px;
-    position: relative;
-    z-index: 20; /* Sits above the white background */
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    header h1 { font-size: 2.2rem; }
-    body::before { top: 400px; }
+    color: white;
 }
