@@ -20,66 +20,82 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
+            background: linear-gradient(rgba(0, 33, 71, 0.95), rgba(0, 33, 71, 0.95)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
-            padding: 80px 20px 110px;
+            padding: 100px 20px 140px;
             text-align: center;
             color: var(--white);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
 
         header img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid var(--secondary);
-            margin-bottom: 20px;
-            object-fit: cover;
+            border: 5px solid var(--secondary);
+            margin-bottom: 25px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
         }
 
-        header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 8px; }
-        header p { color: var(--secondary); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500; }
+        header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; }
+        header p { color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; font-size: 1.1rem; }
 
         nav {
             background: var(--white);
-            padding: 18px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             text-align: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
 
         nav a {
             color: var(--primary);
             text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            margin: 0 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
+            transition: 0.3s;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 60px;
-            padding: 0 20px;
+        nav a:hover { color: var(--accent); }
+
+        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+
+        /* --- New: Rapid Deployment Plan --- */
+        .plan-box {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            border-left: 10px solid var(--secondary);
         }
+
+        .plan-box h3 { color: var(--secondary); margin-bottom: 15px; text-transform: uppercase; }
+        .plan-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .plan-list li { font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; }
+        .plan-list li i { color: var(--secondary); margin-top: 5px; }
 
         .section {
             background: var(--white);
-            padding: 45px;
+            padding: 50px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         h2.bio-title {
@@ -88,100 +104,55 @@
             margin-bottom: 30px;
             text-transform: uppercase;
             font-weight: 800;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
+            border-bottom: 4px solid var(--secondary);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .deployment-banner {
-            background: #fff9e6;
-            border: 2px dashed var(--secondary);
-            padding: 25px;
-            border-radius: var(--radius);
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .deployment-banner i { font-size: 2.5rem; color: var(--secondary); }
-        .deployment-text h3 { color: var(--primary); margin-bottom: 5px; }
-        .deployment-text p { font-size: 0.95rem; font-weight: 500; }
-
-        .stat-bar {
-            background: var(--primary);
-            color: white;
-            padding: 30px;
-            border-radius: var(--radius);
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-
-        .stat-item { text-align: center; }
-        .stat-item h3 { font-size: 2.2rem; color: var(--secondary); font-weight: 800; }
-        .stat-item span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .value-card {
-            padding: 30px;
-            background: #f9fbff;
-            border-radius: var(--radius);
-            text-align: center;
-            border: 1px solid #eef2f7;
-            transition: 0.3s;
-        }
-
-        .value-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .value-card i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
-        .value-card h4 { color: var(--primary); margin-bottom: 10px; }
-        .value-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-
-        .action-box {
-            background: #f0f4f8;
-            padding: 40px;
-            border-radius: var(--radius);
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .btn-group {
+        /* --- Tech Stack Ticker --- */
+        .tech-stack {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 30px;
             flex-wrap: wrap;
+            margin: 40px 0;
+            opacity: 0.7;
         }
 
+        .tech-stack i { font-size: 2.5rem; color: var(--primary); }
+
+        .action-box {
+            background: #f9fbff;
+            padding: 45px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 2px solid #eef2f7;
+        }
+
+        .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 25px; }
+        
         .btn {
-            padding: 14px 28px;
-            border-radius: 8px;
+            padding: 18px 35px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+            gap: 12px;
+            transition: 0.4s;
+            letter-spacing: 1px;
         }
 
         .btn-primary { background: var(--primary); color: white; }
         .btn-secondary { background: var(--secondary); color: var(--primary); }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
 
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        footer { background: var(--primary); color: white; text-align: center; padding: 40px; }
-
+        footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
+        
         @media (max-width: 768px) {
-            .deployment-banner { flex-direction: column; text-align: center; }
-            .stat-bar { flex-direction: column; }
+            header h1 { font-size: 2.2rem; }
+            .section { padding: 30px; }
         }
     </style>
 </head>
@@ -190,7 +161,7 @@
 <header>
     <img src="profile.jpg" alt="Teacher Fahadh">
     <h1>Teacher Fahadh</h1>
-    <p>Professional ICT Educator | Ready for Deployment</p>
+    <p>Senior ICT Educator & Lab Administrator</p>
 </header>
 
 <nav>
@@ -201,76 +172,58 @@
 </nav>
 
 <div class="container">
-    
-    <div class="deployment-banner">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        <div class="deployment-text">
-            <h3>Immediate Availability</h3>
-            <p>Ready to assume ICT teaching duties and laboratory management immediately for the current academic term.</p>
-        </div>
-    </div>
 
-    <div class="stat-bar">
-        <div class="stat-item">
-            <h3>89%</h3>
-            <span>Digital Adoption Rate</span>
-        </div>
-        <div class="stat-item">
-            <h3>8+ Years</h3>
-            <span>Academic Experience</span>
-        </div>
-        <div class="stat-item">
-            <h3>100%</h3>
-            <span>Edexcel Compliance</span>
-        </div>
+    <div class="plan-box">
+        <h3><i class="fa-solid fa-bolt"></i> 30-Day Integration Plan</h3>
+        <ul class="plan-list">
+            <li><i class="fa-solid fa-circle-check"></i> Audit & Secure all ICT Lab Hardware</li>
+            <li><i class="fa-solid fa-circle-check"></i> Set up Google Classroom Workflows</li>
+            <li><i class="fa-solid fa-circle-check"></i> Establish Student Digital Safety Protocols</li>
+            <li><i class="fa-solid fa-circle-check"></i> Benchmarking IGCSE/IAL Prep Levels</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2 class="bio-title">Professional Biography</h2>
-        <div class="bio-text">
-            <p>I am a result-oriented <strong>ICT Teacher</strong> with a broad background in educational technology. My mastery of the <strong>Pearson Edexcel Curriculum</strong> allows me to integrate seamlessly into academic environments and guide students toward examination success with zero downtime.</p>
-            
-            <p>Beyond instruction, I specialize in <strong>LMS Optimization</strong> and <strong>Lab Infrastructure</strong>. I focus on ensuring that every workstation serves as a reliable asset to learning, combining technical troubleshooting with high-level pedagogical delivery.</p>
-        </div>
+        <h2 class="bio-title">Expertise Overview</h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px;">
+            With over 8 years in academic environments, I deliver a "Plug-and-Play" teaching solution. I specialize in the <strong>Pearson Edexcel Curriculum</strong>, ensuring your students aren't just passing exams, but mastering the technologies that define the modern workforce.
+        </p>
 
-        <h2 class="bio-title" style="margin-top: 40px;">Why Hire Me</h2>
-        <div class="value-grid">
-            <div class="value-card">
-                <i class="fa-solid fa-award"></i>
-                <h4>Exam Results</h4>
-                <p>Proven track record of preparing students for international ICT examinations with high-pass outcomes.</p>
-            </div>
-            <div class="value-card">
-                <i class="fa-solid fa-microchip"></i>
-                <h4>Lab Management</h4>
-                <p>I manage the technical health of computer labs, ensuring software is updated and hardware is secure.</p>
-            </div>
-            <div class="value-card">
-                <i class="fa-solid fa-chalkboard-user"></i>
-                <h4>Blended Learning</h4>
-                <p>Expert in Google Classroom and digital grading systems for transparent, efficient education delivery.</p>
-            </div>
+        <div class="tech-stack">
+            <i class="fa-brands fa-python" title="Python Coding"></i>
+            <i class="fa-brands fa-html5" title="Web Development"></i>
+            <i class="fa-brands fa-google" title="Google Workspace for Ed"></i>
+            <i class="fa-brands fa-windows" title="Systems Administration"></i>
+            <i class="fa-solid fa-server" title="Lab Networking"></i>
         </div>
 
         <div class="action-box">
-            <h3 style="margin-bottom: 20px; color: var(--primary);">Secure Your ICT Department Today</h3>
+            <h2 style="color: var(--primary); margin-bottom: 10px;">Immediate Availability</h2>
+            <p>I am prepared to start immediately and require minimal orientation to take over ICT department duties.</p>
+            
             <div class="btn-group">
                 <a href="cv.pdf" class="btn btn-primary">
-                    <i class="fa-solid fa-file-pdf"></i> Review My CV
+                    <i class="fa-solid fa-file-pdf"></i> Download Full CV
                 </a>
                 <a href="coverletter.pdf" class="btn btn-secondary">
                     <i class="fa-solid fa-envelope-open-text"></i> Read Cover Letter
                 </a>
-                <a href="contact.html" class="btn btn-outline">
-                    <i class="fa-solid fa-calendar-check"></i> Book Interview
-                </a>
             </div>
+            <p style="margin-top: 25px; font-weight: 700;">
+                <a href="contact.html" style="color: var(--accent); text-decoration: none;">
+                    <i class="fa-solid fa-arrow-right"></i> Click here to schedule an interview
+                </a>
+            </p>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>© 2026 Teacher Fahadh | Excellence in ICT Education & Technical Readiness</p>
+    <div style="margin-bottom: 20px;">
+        <a href="#" style="color: white; margin: 0 10px;"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+        <a href="#" style="color: white; margin: 0 10px;"><i class="fa-brands fa-github fa-xl"></i></a>
+    </div>
+    <p>© 2026 Teacher Fahadh | Professional ICT Solutions</p>
 </footer>
 
 </body>
