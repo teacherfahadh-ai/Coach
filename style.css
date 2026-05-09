@@ -1,175 +1,138 @@
-/* STELLAR DESIGN SYSTEM v8.0 
-   Focus: Hyper-Modern, Depth Layers, & Precision Fluidity
+/* MASTERWORK PROFESSIONAL CSS 
+   Purpose: Pure Authority & Perfect Layout
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
-  --bg: #030712;             /* Deepest Space */
-  --surface: #111827;        /* Card Surface */
-  --accent: #22d3ee;         /* Cyber Cyan */
-  --accent-glow: rgba(34, 211, 238, 0.15);
-  --text: #f9fafb;
-  --text-dim: #9ca3af;
-  --glass: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.08);
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --accent: #0066ff;
+  --border: #eeeeee;
+  --max-width: 1200px;
 }
 
-/* 1. AUTO-FIT BODY ARCHITECTURE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
+/* 1. THE FOUNDATION (AUTO-FIT) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
-  font-family: 'Space Grotesk', sans-serif; /* High-tech feel */
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* 2. ENLARGED FLOATING STICKY NAV */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 2rem; /* Massive, clean whitespace */
+}
+
+/* 2. THE STICKY HEADER (ENLARGED) */
 header {
   position: sticky;
-  top: 1.5rem;
+  top: 0;
   z-index: 1000;
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--border);
+  height: 100px; /* Tall and authoritative */
+  display: flex;
+  align-items: center;
 }
 
 nav {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
-  height: 85px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  padding: 0 2rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 4rem; /* Big spacing between links */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-dim);
-  font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent-glow);
-}
+.nav-links a:hover { color: var(--accent); }
 
-/* 3. HERO SECTION (Massive Impact) */
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 100px 5%;
-}
-
+/* 3. TYPOGRAPHY (NO GIMMICKS) */
 h1 {
-  font-size: clamp(3rem, 12vw, 7.5rem);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   margin-bottom: 2rem;
-  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-/* 4. THE MODERN BENTO GRID */
+p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 750px;
+  margin-bottom: 2rem;
+}
+
+/* 4. THE PROFESSIONAL FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 2rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 5. COMPONENTS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
 }
 
 .card {
-  grid-column: span 4;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 32px;
   padding: 3rem;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Bento Variation: Makes some cards larger for visual interest */
-.card-large { grid-column: span 8; }
-
-.card:hover {
-  transform: scale(1.02) translateY(-10px);
-  border-color: var(--accent);
-  box-shadow: 0 0 40px var(--accent-glow);
-}
-
-/* 5. DEEP WEIGHTED FOOTER */
-footer {
-  background: #000;
-  padding: 100px 5% 50px;
-  margin-top: 150px;
-  border-top: 1px solid var(--border);
-}
-
-.footer-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 6. CALL TO ACTION BUTTON */
-.btn-cyber {
-  padding: 1.2rem 3rem;
-  background: var(--accent);
-  color: var(--bg);
-  border-radius: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1.1rem;
-  box-shadow: 0 10px 20px var(--accent-glow);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   transition: 0.3s;
 }
 
-.btn-cyber:hover {
-  box-shadow: 0 20px 40px var(--accent);
-  transform: translateY(-3px);
+.card:hover {
+  border-color: var(--text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Background Animated Ornament */
-.bg-gradient {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.05) 0%, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
+.btn {
+  background: var(--text);
+  color: #fff;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  border-radius: 4px;
 }
 
-/* Mobile Fix */
-@media (max-width: 900px) {
-  .card, .card-large { grid-column: span 12; }
+/* Mobile */
+@media (max-width: 768px) {
   .nav-links { display: none; }
-  h1 { font-size: 3.5rem; }
+  header { height: 80px; }
 }
