@@ -50,6 +50,26 @@
         header h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -1.5px; }
         header p { color: var(--secondary); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; font-size: 1rem; }
 
+        /* --- New Strong Headline --- */
+        .main-headline {
+            max-width: 900px;
+            margin: -60px auto 40px;
+            text-align: center;
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 10;
+            position: relative;
+        }
+
+        .main-headline h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
         nav {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
@@ -67,7 +87,7 @@
             text-transform: uppercase;
         }
 
-        .container { max-width: 1100px; margin: -50px auto 80px; padding: 0 20px; position: relative; }
+        .container { max-width: 1100px; margin: 40px auto 80px; padding: 0 20px; position: relative; }
 
         .stat-bar {
             background: var(--primary);
@@ -102,24 +122,43 @@
             padding-left: 20px;
         }
 
-        /* --- Tool Competency Progress Bars --- */
+        /* --- Upgraded 30-Day Plan --- */
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .plan-step {
+            background: #fffdf5;
+            border: 1px solid #f0e6cc;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .plan-step:hover { border-color: var(--secondary); transform: translateY(-5px); }
+
+        .step-num {
+            background: var(--secondary);
+            color: var(--primary);
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .plan-step h5 { color: var(--primary); margin-bottom: 8px; font-weight: 700; }
+        .plan-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
         .skill-group { margin-bottom: 30px; }
         .skill-item { margin-bottom: 15px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 700; color: var(--primary); font-size: 0.9rem; }
         .progress-bg { background: #e2e8f0; height: 10px; border-radius: 5px; overflow: hidden; }
         .progress-fill { background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; border-radius: 5px; }
-
-        .plan-box {
-            background: #fff9e6;
-            border: 2px dashed var(--secondary);
-            padding: 30px;
-            border-radius: var(--radius);
-            margin: 30px 0;
-        }
-
-        .plan-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .plan-list li { font-size: 0.95rem; display: flex; align-items: flex-start; gap: 8px; font-weight: 600; color: var(--primary); }
-        .plan-list li i { color: var(--accent); margin-top: 4px; }
 
         .narrative p {
             font-size: 1.15rem;
@@ -127,8 +166,6 @@
             margin-bottom: 25px;
             text-align: justify;
         }
-
-        .narrative strong { color: var(--primary); }
 
         .course-grid {
             display: grid;
@@ -180,6 +217,10 @@
     <p>Senior ICT Educator | Pearson Edexcel Specialist</p>
 </header>
 
+<div class="main-headline">
+    <h2>ICT Trainer & Digital Skills Coach Helping Students and Professionals Build Real Tech Careers</h2>
+</div>
+
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -199,14 +240,14 @@
         <h2 class="section-title">Educational Narrative</h2>
         <div class="narrative">
             <p>
-                I am a passionate <strong>Senior ICT Educator</strong> dedicated to fostering high-level digital literacy and academic excellence. With over eight years in the classroom, I specialize in the <strong>Pearson Edexcel Curriculum</strong>, guiding students through the complexities of IGCSE and IAL ICT with a focus on measurable examination success.
+                I am a passionate <strong>Senior ICT Educator</strong> dedicated to fostering high-level digital literacy and academic excellence. With over eight years in the classroom, I specialize in the <strong>Pearson Edexcel Curriculum</strong>, guiding students and professionals through the complexities of modern technology with a focus on measurable success.
             </p>
             <p>
-                My approach combines pedagogical expertise with technical precision. I have a proven track record of leading digital transitions, such as implementing a Library Management System that achieved an <strong>89% adoption rate</strong>. Beyond instruction, I ensure that school ICT laboratories are maintained at a 100% operational standard, creating a stable, high-performance learning environment for every student.
+                My approach combines pedagogical expertise with technical precision. I have a proven track record of leading digital transitions, such as implementing a Library Management System that achieved an <strong>89% adoption rate</strong>. Beyond instruction, I ensure that ICT laboratories are maintained at a 100% operational standard, creating a stable, high-performance environment for building real-world tech skills.
             </p>
         </div>
 
-        <h3 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase;">Teaching & Technical Competency</h3>
+        <h3 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase;">Technical Competency</h3>
         <div class="skill-group">
             <div class="skill-item">
                 <div class="skill-info"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
@@ -220,20 +261,32 @@
                 <div class="skill-info"><span>Digital Learning Systems (LMS)</span><span>90%</span></div>
                 <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-info"><span>Microsoft Office Specialist (Mastery)</span><span>100%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div>
-            </div>
         </div>
 
-        <div class="plan-box">
-            <h4 style="margin-bottom: 15px; color: var(--primary); text-transform: uppercase;"><i class="fa-solid fa-bolt"></i> 30-Day Classroom Integration</h4>
-            <ul class="plan-list">
-                <li><i class="fa-solid fa-check"></i> Curriculum Alignment & Planning</li>
-                <li><i class="fa-solid fa-check"></i> Lab Infrastructure Health Audit</li>
-                <li><i class="fa-solid fa-check"></i> Google Classroom/LMS Onboarding</li>
-                <li><i class="fa-solid fa-check"></i> Student Digital Safety Briefing</li>
-            </ul>
+        <h4 style="margin-top: 40px; color: var(--primary); text-transform: uppercase; font-weight: 800;">
+            <i class="fa-solid fa-bolt" style="color: var(--secondary);"></i> 30-Day Integration Roadmap
+        </h4>
+        <div class="plan-grid">
+            <div class="plan-step">
+                <div class="step-num">01</div>
+                <h5>Audit & Align</h5>
+                <p>Full health check of ICT hardware and curriculum alignment for the term.</p>
+            </div>
+            <div class="plan-step">
+                <div class="step-num">02</div>
+                <h5>LMS Launch</h5>
+                <p>Establishing Google Classroom and digital workflows for all students.</p>
+            </div>
+            <div class="plan-step">
+                <div class="step-num">03</div>
+                <h5>Safety First</h5>
+                <p>Conducting student briefings on digital safety and ethical tech use.</p>
+            </div>
+            <div class="plan-step">
+                <div class="step-num">04</div>
+                <h5>Full Scale</h5>
+                <p>Active delivery of high-engagement ICT lessons and lab sessions.</p>
+            </div>
         </div>
     </div>
 
@@ -248,7 +301,7 @@
             <div class="course-card">
                 <i class="fa-solid fa-microchip"></i>
                 <h4>Technical Reliability</h4>
-                <p>I manage the hardware I teach on, ensuring labs are always secure and functional.</p>
+                <p>I manage the hardware I teach on, ensuring labs are always functional.</p>
             </div>
             <div class="course-card">
                 <i class="fa-solid fa-chalkboard-user"></i>
@@ -259,7 +312,7 @@
     </div>
 
     <div class="cta-box">
-        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Secure Your ICT Department</h2>
+        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Ready for Deployment</h2>
         <p style="opacity: 0.9;">Available for Senior ICT Teaching and Academic Department Lead roles.</p>
         
         <div class="btn-group">
