@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Fahadh | ICT & Computer Science Educator</title>
+    <title>Teacher Fahadh | ICT Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #002147; /* Academic Deep Navy */
-            --secondary: #d4af37; /* Professional Gold Accent */
+            --primary: #002147; 
+            --secondary: #d4af37; 
             --accent: #0056b3;
             --bg: #f5f7fa;
             --white: #ffffff;
@@ -28,11 +28,10 @@
             line-height: 1.6;
         }
 
-        /* --- Elegant Header --- */
         header {
             background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(0, 33, 71, 0.9)), 
                         url('https://www.transparenttextures.com/patterns/cubes.png'), var(--primary);
-            padding: 80px 20px;
+            padding: 80px 20px 110px;
             text-align: center;
             color: var(--white);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -43,15 +42,13 @@
             height: 140px;
             border-radius: 50%;
             border: 4px solid var(--secondary);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            object-fit: cover;
             margin-bottom: 20px;
+            object-fit: cover;
         }
 
-        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 8px; font-weight: 700; }
-        header p { font-weight: 300; letter-spacing: 1px; color: var(--secondary); font-size: 1.1rem; text-transform: uppercase; }
+        header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 8px; }
+        header p { color: var(--secondary); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500; }
 
-        /* --- Floating Navigation --- */
         nav {
             background: var(--white);
             padding: 18px 0;
@@ -69,16 +66,11 @@
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: all 0.3s;
         }
 
-        nav a:hover { color: var(--accent); border-bottom: 2px solid var(--secondary); }
-
-        /* --- Content Container --- */
         .container {
             max-width: 1100px;
-            margin: -40px auto 60px;
+            margin: 60px auto 60px;
             padding: 0 20px;
         }
 
@@ -90,109 +82,83 @@
             margin-bottom: 35px;
         }
 
-        /* --- Enhanced Professional Biography Title --- */
         h2.bio-title {
             color: var(--primary);
             font-size: 1.8rem;
             margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 2px;
             font-weight: 800;
-            position: relative;
-            padding-bottom: 15px;
-            display: block;
             border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
         }
+
+        /* --- Ready for Deployment Box --- */
+        .deployment-banner {
+            background: #fff9e6;
+            border: 2px dashed var(--secondary);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .deployment-banner i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .deployment-text h3 { color: var(--primary); margin-bottom: 5px; }
+        .deployment-text p { font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
 
         .bio-text p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 25px;
-            text-align: justify;
+            margin-bottom: 20px;
         }
 
-        .bio-text strong { color: var(--primary); font-weight: 700; }
-
-        /* --- Action Buttons --- */
+        /* --- Action Area --- */
         .action-box {
-            background: #f9fbff;
-            padding: 35px;
+            background: #f0f4f8;
+            padding: 40px;
             border-radius: var(--radius);
             text-align: center;
-            margin-top: 30px;
-            border: 1px solid #eef2f7;
+            margin-top: 40px;
         }
+
+        .action-box h3 { margin-bottom: 20px; color: var(--primary); }
 
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 16px 32px;
+            padding: 14px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.95rem;
+            text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: 0.3s;
-            text-transform: uppercase;
         }
 
-        .btn-navy { background-color: var(--primary); color: white; }
-        .btn-navy:hover { background-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,33,71,0.2); }
-
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: var(--secondary); color: var(--primary); }
         .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
-        /* --- Enhanced Footer with Links --- */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        .footer-links {
-            margin-bottom: 30px;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            opacity: 0.8;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover { opacity: 1; color: var(--secondary); }
-
-        .footer-bottom {
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-        }
-
-        .footer-tagline {
-            opacity: 0.5;
-            font-size: 0.75rem;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        footer { background: var(--primary); color: white; text-align: center; padding: 40px; }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .section { padding: 30px; }
-            .footer-links a { display: block; margin: 10px 0; }
+            .deployment-banner { flex-direction: column; text-align: center; }
+            .section { padding: 25px; }
         }
     </style>
 </head>
@@ -201,7 +167,7 @@
 <header>
     <img src="profile.jpg" alt="Teacher Fahadh">
     <h1>Teacher Fahadh</h1>
-    <p>ICT Educator | Pearson Edexcel Curriculum Specialist</p>
+    <p>ICT Educator | Available for Immediate Placement</p>
 </header>
 
 <nav>
@@ -213,20 +179,34 @@
 
 <div class="container">
     <div class="section">
+        <div class="deployment-banner">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div class="deployment-text">
+                <h3>Ready for Immediate Deployment</h3>
+                <p>Fully prepared to assume ICT teaching duties, manage computer labs, and implement Pearson Edexcel standards from Day 1.</p>
+            </div>
+        </div>
+
         <h2 class="bio-title">Professional Biography</h2>
         <div class="bio-text">
-            <p>I am <strong>Teacher Fahadh</strong>, a dedicated Computer Science and ICT Specialist based in Hargeisa, Somaliland. My mission is to empower the next generation of digital leaders by delivering high-quality, practical technical education tailored to the modern workforce.</p>
+            <p>I am a result-oriented <strong>ICT Teacher</strong> with extensive experience in the Somaliland educational sector. My expertise in the <strong>Pearson Edexcel Curriculum</strong> allows me to jump directly into active classrooms and guide students toward examination success with zero downtime.</p>
             
-            <p>With a mastery of the <strong>Pearson Edexcel</strong> curriculum, I focus on building technical proficiency in areas ranging from core digital literacy to advanced software applications. I believe that in the rapidly evolving Somaliland economy, computer skills are the most vital tools a student can possess to achieve professional success.</p>
+            <p>I come fully equipped with a library of digital teaching resources, pre-planned ICT practicals, and advanced skills in <strong>Google Classroom management</strong>. I am not just looking to teach; I am ready to optimize your institution’s ICT department, ensuring all hardware and software systems are functioning at peak efficiency for student learning.</p>
+            
+            <p>With a background in both technical maintenance and high-level ICT instruction, I provide schools with a "dual-threat" capability: a teacher who can deliver complex lessons and a technician who can ensure the lab stays operational.</p>
         </div>
 
         <div class="action-box">
+            <h3>Review My Teaching Credentials</h3>
             <div class="btn-group">
-                <a href="cv.pdf" class="btn btn-navy">
-                    <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                <a href="cv.pdf" class="btn btn-primary">
+                    <i class="fa-solid fa-file-pdf"></i> Review My CV
                 </a>
-                <a href="coverpage.pdf" class="btn btn-outline">
-                    <i class="fa-solid fa-paper-plane"></i> Review Cover Letter
+                <a href="coverletter.pdf" class="btn btn-secondary">
+                    <i class="fa-solid fa-envelope-open-text"></i> Read Cover Letter
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    <i class="fa-solid fa-handshake"></i> Book Interview
                 </a>
             </div>
         </div>
@@ -234,17 +214,7 @@
 </div>
 
 <footer>
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="experience.html">Experience</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>© 2026 Teacher Fahadh</p>
-        <p class="footer-tagline">Advancing Digital Excellence in Somaliland</p>
-    </div>
+    <p>© 2026 Teacher Fahadh | Excellence in ICT Education & Technical Readiness</p>
 </footer>
 
 </body>
