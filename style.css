@@ -1,219 +1,128 @@
-/* ULTIMATE PROFESSIONAL DESIGN SYSTEM
-   Theme: Strategic Modern Dark
+/* SOVEREIGN DESIGN SYSTEM v2.0 
+   Focus: Depth, Motion, & Mathematical Balance
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
 :root {
-    /* Color Palette */
-    --bg-dark: #020617;         /* Deepest Slate */
-    --bg-card: #0f172a;         /* Surface Slate */
-    --accent: #38bdf8;          /* Electric Sky Blue */
-    --accent-glow: rgba(56, 189, 248, 0.25);
-    --text-primary: #f8fafc;    /* Near White */
-    --text-secondary: #94a3b8;  /* Muted Slate */
+    /* Color Theory: Deep Space & Electric Core */
+    --primary: #0ea5e9;
+    --primary-bright: #38bdf8;
+    --secondary: #6366f1;
+    --bg-base: #020617;
+    --bg-surface: rgba(15, 23, 42, 0.8);
     
-    /* Glassmorphism */
-    --glass-bg: rgba(15, 23, 42, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --blur: blur(12px);
+    /* Precision Spacing */
+    --step-0: clamp(1rem, 0.92rem + 0.39vw, 1.25rem);
+    --step-2: clamp(1.56rem, 1.38rem + 0.9vw, 2.1rem);
+    --step-5: clamp(3.05rem, 2.45rem + 3.01vw, 5rem);
     
-    /* Transitions */
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Shadows & Layers */
+    --inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+    --drop-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* 1. Global Resets & Base Styles */
+/* 1. Reset & Smooth Performance */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
+    background: var(--bg-base);
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
-/* 2. Layout & Containers */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section {
-    padding: 100px 0;
-}
-
-/* 3. The "Outstanding" Hero Text */
-.gradient-text {
-    background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-}
-
-h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.04em;
-}
-
-p.subtitle {
-    color: var(--text-secondary);
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin-bottom: 2.5rem;
-}
-
-/* 4. Premium Navigation (Sticky Glass) */
+/* 2. The "Refraction" Header */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: var(--glass-bg);
-    backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
+    background: rgba(2, 6, 23, 0.5);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* 3. Hero Typography: Visual Hierarchy */
+.hero-title {
+    font-size: var(--step-5);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-/* 5. Glassmorphism Cards (Services/Projects) */
-.grid {
+/* 4. Bento Grid: Modern Layout Intelligence */
+.bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1.5rem;
+    padding: 2rem 0;
 }
 
-.card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    padding: 3rem;
+.bento-item {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
-    transition: var(--transition);
+    padding: 2rem;
+    box-shadow: var(--inner-glow), var(--drop-shadow);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border 0.3s;
     position: relative;
     overflow: hidden;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at top left, var(--accent-glow), transparent 70%);
-    opacity: 0;
-    transition: var(--transition);
+.bento-item:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--primary);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-/* 6. Buttons */
-.btn {
-    display: inline-block;
-    padding: 14px 36px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px var(--accent);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 1px solid var(--glass-border);
-    color: var(--text-primary);
-}
-
-.btn-secondary:hover {
-    background: var(--glass-border);
-}
-
-/* 7. Animated Background Aura */
-.bg-aura {
+/* 5. Magical "Aura" Background */
+.aura {
     position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    border-radius: 50%;
     z-index: -1;
-    filter: blur(80px);
-    top: -200px;
-    right: -200px;
-    animation: pulse 12s infinite alternate;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+    top: -40vw;
+    right: -40vw;
+    filter: blur(100px);
+    animation: rotate 20s linear infinite;
 }
 
-@keyframes pulse {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(-100px, 100px) scale(1.2); }
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* 8. Footer */
-footer {
-    border-top: 1px solid var(--glass-border);
-    padding: 50px 0;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+/* 6. Buttons: The Micro-Interaction */
+.btn-world-class {
+    position: relative;
+    padding: 1rem 2.5rem;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-/* 9. Scrollbar Design */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { 
-    background: var(--bg-card); 
-    border-radius: 10px; 
-    border: 2px solid var(--bg-dark);
+.btn-world-class:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    section { padding: 60px 0; }
-    .nav-links { display: none; } /* Consider a mobile menu here */
-    h1 { font-size: 2.8rem; }
-}
+/* 7. Utilities */
+.text-balance { text-wrap: balance; }
+.glass-text { color: var(--primary-bright); text-shadow: 0 0 20px var(--primary); }
