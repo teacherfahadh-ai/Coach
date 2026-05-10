@@ -7,141 +7,93 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body id="page-home">
 
 <a href="https://wa.me/252636710907" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="contact.html">Contact</a>
+    <div class="container">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
-<header class="container">
-    <img src="profile.jpg" alt="Teacher Fahadh">
-    <h1>Teacher Fahadh</h1>
-    <span class="title-tag">Senior ICT Educator</span>
-    <div style="margin-top: 25px;">
-        <h2 style="color: var(--accent-blue); font-size: 1.8rem; margin-bottom: 10px;">Empowering Future Innovators Through ICT Education</h2>
-        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto;">Helping students build practical technology skills, confidence, and digital knowledge for the modern world.</p>
+<header class="hero">
+    <div class="profile-wrapper">
+        <img src="profile.jpg" alt="Teacher Fahadh">
+    </div>
+    <div class="container">
+        <span class="badge">Senior ICT Educator</span>
+        <h1>Teacher Fahadh</h1>
+        <p>Empowering future innovators through high-impact ICT education and practical technical leadership.</p>
     </div>
 </header>
 
-<div class="container">
+<main class="container">
     
-    <div class="glass-section">
-        <h2 class="section-title">Educational Narrative</h2>
-        <p style="font-size: 1.15rem; color: var(--text-dim);">
-            I am a <strong>Senior ICT Educator</strong>. I empower students and professionals by bridging the gap between academic theory and real-world technology application. My approach focuses on delivering consistent academic excellence and equipping learners with high-demand digital proficiencies.
-        </p>
-        <div style="margin-top: 30px; padding: 25px; border-left: 2px solid var(--accent); background: rgba(255,255,255,0.02);">
-            <p style="font-style: italic; color: var(--text-main);">"Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance."</p>
-            <span style="display: block; margin-top: 10px; font-weight: 800; color: var(--accent); font-size: 0.8rem; text-transform: uppercase;">— Senior Academic Leadership</span>
+    <section class="glass-box">
+        <h2 class="title-gold">Educational Narrative</h2>
+        <p>I am a <strong>Senior ICT Educator</strong>. I empower students and professionals by bridging the gap between academic theory and real-world technology application. My approach focuses on delivering consistent academic excellence and equipping learners with high-demand digital proficiencies.</p>
+        <div class="quote-border">
+            <p>"Teacher Fahadh's unique pedagogical approach has consistently elevated ICT performance."</p>
+            <cite>— Senior Academic Leadership</cite>
         </div>
+    </section>
+
+    <div class="stat-grid">
+        <div class="stat-card"><h3>A*–B</h3><p>Exam Target</p></div>
+        <div class="stat-card"><h3>8+</h3><p>Yrs Experience</p></div>
+        <div class="stat-card"><h3>100%</h3><p>Lab Readiness</p></div>
+        <div class="stat-card"><h3>89%</h3><p>Adoption Rate</p></div>
     </div>
 
-    <div class="glass-section">
-        <h2 class="section-title">Technical Competency</h2>
-        <div class="skill-item">
-            <div class="skill-info"><span>Pearson Edexcel IGCSE/IAL Instruction</span><span>100%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-info"><span>ICT Lab & Network Management</span><span>95%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-info"><span>Digital Learning Platforms (LMS)</span><span>90%</span></div>
-            <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
-        </div>
-    </div>
-
-    <div class="glass-section">
-        <h2 class="section-title">Tech Stack & Tools</h2>
-        <div class="tech-tags">
-            <span class="tech-tag">Google Workspace for Education</span>
-            <span class="tech-tag">Microsoft 365 Education</span>
-            <span class="tech-tag">Pearson Progress</span>
-            <span class="tech-tag">Python (Programming)</span>
-            <span class="tech-tag">HTML5 / CSS3</span>
-            <span class="tech-tag">Cisco Packet Tracer</span>
-            <span class="tech-tag">Moodle / Canvas LMS</span>
-            <span class="tech-tag">Windows Server Administration</span>
-            <span class="tech-tag">Active Directory</span>
-        </div>
-    </div>
-
-    <div class="stat-bar">
-        <div class="stat-pill">
-            <h3>A*–B</h3>
-            <span>Exam Target</span>
-        </div>
-        <div class="stat-pill">
-            <h3>8+</h3>
-            <span>Yrs Experience</span>
-        </div>
-        <div class="stat-pill">
-            <h3>100%</h3>
-            <span>Lab Readiness</span>
-        </div>
-        <div class="stat-pill">
-            <h3>89%</h3>
-            <span>Adoption Rate</span>
-        </div>
-    </div>
-
-    <div class="glass-section">
-        <h2 class="section-title">Project Spotlight</h2>
-        <div style="display: flex; gap: 25px; align-items: center;">
-            <div style="background: var(--accent); color: #000; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">
-                <i class="fa-solid fa-microchip"></i>
-            </div>
+    <section class="glass-box">
+        <h2 class="title-gold">Project Spotlight</h2>
+        <div class="project-content">
+            <div class="icon-bg"><i class="fa-solid fa-microchip"></i></div>
             <div>
-                <h4 style="font-size: 1.2rem; margin-bottom: 5px;">Digital Library & LMS Integration</h4>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Led the transition from manual record-keeping to a fully automated <strong>Digital Library Management System</strong>. Achieved an <strong>89% adoption rate</strong> across faculty.</p>
-                <div style="display: flex; gap: 15px; margin-top: 10px; font-size: 0.8rem; font-weight: 700; color: var(--accent-blue);">
-                    <span><i class="fa-solid fa-check"></i> 2000+ Records Digitized</span>
-                    <span><i class="fa-solid fa-check"></i> 100% System Uptime</span>
-                </div>
+                <h3>Digital Library & LMS Integration</h3>
+                <p>Led the transition from manual record-keeping to a fully automated Digital Library Management System. Achieved an 89% adoption rate across faculty.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <h2 class="section-title">Why Hire Me</h2>
+    <h2 class="title-gold">Why Hire Me</h2>
     <div class="why-grid">
-        <div class="why-box">
+        <div class="why-card">
             <i class="fa-solid fa-bolt"></i>
-            <h4>Quick Deployment</h4>
-            <p style="color: var(--text-dim); font-size: 0.85rem;">Ready for immediate integration with zero technical onboarding.</p>
+            <h3>Quick Deployment</h3>
+            <p>Ready for immediate integration with zero technical onboarding.</p>
         </div>
-        <div class="why-box">
+        <div class="why-card">
             <i class="fa-solid fa-chart-line"></i>
-            <h4>Proven Results</h4>
-            <p style="color: var(--text-dim); font-size: 0.85rem;">Consistent achievement in international ICT qualifications.</p>
+            <h3>Proven Results</h3>
+            <p>Consistent achievement in international ICT qualifications.</p>
         </div>
-        <div class="why-box">
+        <div class="why-card">
             <i class="fa-solid fa-layer-group"></i>
-            <h4>Integrated Mastery</h4>
-            <p style="color: var(--text-dim); font-size: 0.85rem;">Managing both teaching curriculum and infrastructure maintenance.</p>
+            <h3>Integrated Mastery</h3>
+            <p>Managing both teaching curriculum and infrastructure maintenance.</p>
         </div>
     </div>
 
-    <div class="cta-box">
-        <h2 style="font-size: 2rem; margin-bottom: 10px;">Ready for Quick Deployment</h2>
-        <p style="color: var(--text-dim); margin-bottom: 30px;">Available for immediate Senior ICT Teaching and Academic Leadership roles.</p>
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <a href="cv.pdf" class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> View CV</a>
-            <a href="contact.html" class="btn btn-gold">Request Interview</a>
+    <div class="doc-cta">
+        <h2>Professional Documentation</h2>
+        <p>Review my credentials and cover letter for your leadership vacancy.</p>
+        <div class="btn-row">
+            <a href="cv.pdf" target="_blank" class="btn btn-gold">View CV</a>
+            <a href="coverpage.pdf" target="_blank" class="btn btn-line">Cover Page</a>
         </div>
     </div>
 
-    <footer style="padding: 60px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+    <footer>
         <p>© 2026 Teacher Fahadh | Excellence in ICT Education</p>
     </footer>
-</div>
+</main>
 
 </body>
 </html>
