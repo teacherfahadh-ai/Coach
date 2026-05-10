@@ -1,138 +1,61 @@
-/* MASTERWORK PROFESSIONAL CSS 
-   Purpose: Pure Authority & Perfect Layout
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+/* --- UNIVERSAL BASICS --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 
 :root {
-  --bg: #ffffff;
-  --text: #0a0a0a;
-  --accent: #0066ff;
-  --border: #eeeeee;
-  --max-width: 1200px;
+    --gold: #c5a059;
+    --dark: #2e180e;
+    --deep: #4d2b19;
+    --white: #fffdf8;
+    --glass: rgba(255, 255, 255, 0.08);
 }
 
-/* 1. THE FOUNDATION (AUTO-FIT) */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--deep); color: var(--white); line-height: 1.6; }
+.container { width: min(1100px, 92%); margin: auto; }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* NAVIGATION (STAYS SAME ON ALL PAGES) */
+nav { background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); padding: 20px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+nav .container { display: flex; justify-content: center; gap: 25px; }
+nav a { color: #ccc; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+nav a.active { color: var(--gold); }
+
+/* --- HOME PAGE ONLY SECTION (ID #page-home) --- */
+
+#page-home .hero { padding: 80px 20px; text-align: center; }
+#page-home .profile-wrapper { 
+    width: 170px; 
+    height: 170px; 
+    margin: 0 auto 20px; 
+    border-radius: 50%; 
+    border: 4px solid var(--gold); 
+    overflow: hidden;
 }
+#page-home .profile-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+#page-home h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 900; }
+#page-home .badge { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; }
 
-main {
-  flex: 1;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 80px 2rem; /* Massive, clean whitespace */
-}
+#page-home .glass-box { background: var(--glass); padding: 40px; border-radius: 24px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); }
+#page-home .title-gold { color: var(--gold); text-transform: uppercase; margin-bottom: 20px; font-size: 1.1rem; letter-spacing: 1px; }
 
-/* 2. THE STICKY HEADER (ENLARGED) */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--border);
-  height: 100px; /* Tall and authoritative */
-  display: flex;
-  align-items: center;
-}
+#page-home .quote-border { margin-top: 20px; border-left: 3px solid var(--gold); padding-left: 20px; font-style: italic; opacity: 0.9; }
 
-nav {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
+#page-home .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 40px; }
+#page-home .stat-card { background: var(--glass); padding: 25px; border-radius: 20px; text-align: center; }
+#page-home .stat-card h3 { color: var(--gold); font-size: 1.4rem; }
 
-.nav-links {
-  display: flex;
-  gap: 4rem; /* Big spacing between links */
-}
+#page-home .project-content { display: flex; gap: 20px; align-items: flex-start; }
+#page-home .icon-bg { background: var(--gold); color: var(--dark); padding: 15px; border-radius: 12px; }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.2s;
-}
+#page-home .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+#page-home .why-card { background: rgba(255,255,255,0.04); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid transparent; }
+#page-home .why-card:hover { border-color: var(--gold); }
+#page-home .why-card i { color: var(--gold); font-size: 2rem; margin-bottom: 15px; display: block; }
 
-.nav-links a:hover { color: var(--accent); }
+#page-home .doc-cta { background: var(--dark); border: 1px solid var(--gold); padding: 50px; border-radius: 24px; text-align: center; margin-top: 40px; }
+#page-home .btn-row { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+#page-home .btn { padding: 12px 30px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+#page-home .btn-gold { background: var(--gold); color: var(--dark); }
+#page-home .btn-line { border: 1px solid var(--white); color: var(--white); }
 
-/* 3. TYPOGRAPHY (NO GIMMICKS) */
-h1 {
-  font-size: clamp(3rem, 7vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #444;
-  max-width: 750px;
-  margin-bottom: 2rem;
-}
-
-/* 4. THE PROFESSIONAL FOOTER */
-footer {
-  background: #000;
-  color: #fff;
-  padding: 80px 2rem;
-  margin-top: auto;
-}
-
-.footer-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* 5. COMPONENTS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.card {
-  padding: 3rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  border-color: var(--text);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.btn {
-  background: var(--text);
-  color: #fff;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  header { height: 80px; }
-}
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; }
+footer { text-align: center; padding: 40px; opacity: 0.5; }
